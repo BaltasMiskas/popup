@@ -82,14 +82,37 @@
         /* Hero Layout */
         .hero {
             text-align: center;
-            padding: 20px 0;
-            margin-bottom: 60px;
+            padding: 20px 0 10px 0;
+            margin-bottom: 40px;
         }
 
-        .hero p {
+        .hero p.lead {
             font-size: 1.1rem;
             max-width: 540px;
             margin: 0 auto 32px auto;
+        }
+
+        /* Compact Hero Form */
+        .hero-mini-form {
+            max-width: 480px;
+            margin: 0 auto 32px auto;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            padding: 24px;
+            text-align: left;
+        }
+
+        .hero-mini-form .mini-group {
+            margin-bottom: 16px;
+        }
+
+        .hero-mini-form label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
 
         /* Buttons & Actions */
@@ -98,26 +121,59 @@
             background-color: var(--color-accent);
             color: #ffffff;
             text-decoration: none;
-            padding: 15px 38px;
+            padding: 14px 30px;
             font-size: 0.95rem;
             font-weight: 500;
             letter-spacing: 0.02em;
             transition: background-color 0.2s ease;
             border: none;
             cursor: pointer;
+            width: 100%;
+            text-align: center;
         }
 
         .btn-primary:hover {
             background-color: var(--color-accent-hover);
         }
 
+        /* Indicative Prices Block */
+        .pricing-preview {
+            max-width: 480px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 0.9rem;
+            border-top: 1px dashed var(--color-border);
+            padding-top: 16px;
+        }
+
+        .pricing-preview h4 {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            color: var(--color-text-muted);
+        }
+
+        .pricing-row strong {
+            color: var(--color-text);
+        }
+
         /* Subdued Social Proof */
         .social-proof {
-            margin-top: 48px;
+            margin-top: 40px;
             font-size: 0.8rem;
             color: var(--color-text-light);
             letter-spacing: 0.05em;
             text-transform: uppercase;
+            text-align: center;
         }
 
         .social-proof-brands {
@@ -143,13 +199,13 @@
             display: block;
             font-size: 0.8rem;
             font-style: normal;
-            color: var(--color-text-light);
+            color: var(--text-light);
             margin-top: 6px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        /* Core Features Grid Alternative (Table layout fixes iframe issues) */
+        /* Core Features Grid Alternative */
         .features-table {
             width: 100%;
             border-collapse: collapse;
@@ -283,11 +339,6 @@
             transform: rotate(45deg);
         }
 
-        .form-card button[type="submit"] {
-            width: 100%;
-            margin-top: 10px;
-        }
-
         /* Technical Logistics Section */
         .specs-list {
             list-style: none;
@@ -348,22 +399,52 @@
 
     <div class="page-wrapper">
         
-        <!-- SECTION 1: HERO & ACTION HEADER -->
+        <!-- SECTION 1: HERO & INTERACTIVE HEADER -->
         <section class="hero">
             <h1>Jūsų prekių ženklo namai Vilniaus senamiestyje</h1>
-            <p>Šviesi, minimalistinė 24 m² pop-up erdvė Raugyklos g. 6 — sukurta nepriklausomiems dizaineriams, kūrėjams ir konceptualiems mados projektams.</p>
+            <p class="lead">Šviesi, minimalistinė 24 m² pop-up erdvė Raugyklos g. 6 — sukurta nepriklausomiems dizaineriams, kūrėjams ir konceptualiems mados projektams.</p>
             
-            <a href="#uzklausa" class="btn-primary">Teirautis laisvų datų</a>
+            <!-- Quick Mini-Form Concept -->
+            <div class="hero-mini-form">
+                <form action="https://tally.so/r/q4aQj5" method="POST">
+                    <div class="mini-group">
+                        <label for="quick-dates">Įveskite norimas pop-up nuomos datas</label>
+                        <input type="text" id="quick-dates" name="duration" class="form-control" placeholder="Pvz.: Birželio 15–21 d." required>
+                    </div>
+                    <div class="mini-group">
+                        <label for="quick-email">Jūsų el. paštas</label>
+                        <input type="email" id="quick-email" name="email" class="form-control" placeholder="vardas@pavyzdys.lt" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Tikrinti prieinamumą</button>
+                </form>
+            </div>
+
+            <!-- Indicative Pricing Block -->
+            <div class="pricing-preview">
+                <h4>Orientacinės nuomos kainos</h4>
+                <div class="pricing-row">
+                    <span>Darbo dienomis (I–IV):</span>
+                    <strong>nuo 45€ / d.</strong>
+                </div>
+                <div class="pricing-row">
+                    <span>Savaitgalio paketas (IV–VII):</span>
+                    <strong>nuo 180€</strong>
+                </div>
+                <div class="pricing-row">
+                    <span>Pilna savaitė (7 dienos):</span>
+                    <strong>nuo 290€</strong>
+                </div>
+            </div>
 
             <div class="social-proof">
                 <span>Erdve pasitiki:</span>
-                <span class="social-proof-brands">Mados Kūrėjai / Nepriklausomi Prekių Ženklai / Baltijos Dizaineriai</span>
+                <span class="social-proof-brands">Mados kūrėjai / Nepriklausomi prekių ženklai / Baltijos dizaineriai</span>
             </div>
         </section>
 
         <!-- SECTION 2: TESTIMONIAL SNAPSHOT -->
         <section class="mini-testimonial">
-            blockquote>
+            <blockquote>
                 „Nuostabi vieta pristatyti naują kolekciją. Puikus apšvietimas, minimalistinė estetika ir ištikima auditorija užsuka visiškai natūraliai dėka gyvo Senamiesčio kvartalo.“
             </blockquote>
             <cite>Pastarojo pop-up kūrėjas</cite>
@@ -396,11 +477,11 @@
             </table>
         </section>
 
-        <!-- SECTION 4: CUSTOM APPLICATION FORM -->
+        <!-- SECTION 4: FULL APPLICATION FORM -->
         <section id="uzklausa">
             <div class="form-card">
-                <h2>Rezervacijos užklausa</h2>
-                <p class="form-subtitle">Užpildykite trumpą formą ir aptarkime jūsų pop-up viziją bei laisvas datas.</p>
+                <h2>Išsami rezervacijos užklausa</h2>
+                <p class="form-subtitle">Užpildykite pilną formą žemiau arba pateikite papildomus organizacinius reikalavimus.</p>
                 
                 <form action="https://tally.so/r/q4aQj5" method="POST">
                     
@@ -415,8 +496,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="email">El. pašto adresas *</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <label for="email-full">El. pašto adresas *</label>
+                        <input type="email" id="email-full" name="email" class="form-control" required>
                     </div>
 
                     <div class="form-group">
@@ -448,8 +529,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="duration">Pageidaujamas laikotarpis ir trukmė *</label>
-                        <input type="text" id="duration" name="duration" class="form-control" placeholder="Pvz.: Birželio vidurys, 1 savaitė" required>
+                        <label for="duration-full">Pageidaujamas laikotarpis ir trukmė *</label>
+                        <input type="text" id="duration-full" name="duration" class="form-control" placeholder="Pvz.: Birželio vidurys, 1 savaitė" required>
                     </div>
 
                     <div class="form-group">
@@ -482,7 +563,7 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <h3>Kokia yra minimali nuomos trukmė?</h3>
-                    <p>Rekomenduojame minimalią 3–4 dienų nuomą (pvz., savaitgaliui ketvirtadienis–sekmadienis), kad pasiektumėte maksimalų auditorijos srautą, tačiau lanksčiai peržiūrime ir vienos dienos renginių idėjas.</p>
+                    <p>Rekomenduojame nuomotis minimaliai 3–4 dienas (pvz., savaitgaliui ketvirtadienį–sekmadienį), kad pasiektumėte maksimalų auditorijos srautą, tačiau lanksčiai peržiūrime ir vienos dienos renginių idėjas.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Ar galima keisti baldų išdėstymą?</h3>
