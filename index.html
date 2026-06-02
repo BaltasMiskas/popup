@@ -84,6 +84,28 @@
             margin: 0 auto 32px auto;
         }
 
+        /* Minimalist Google Maps Embed Container */
+        .map-container {
+            width: 100%;
+            height: 250px;
+            margin-bottom: 32px;
+            border: 1px solid var(--color-border);
+            filter: grayscale(1) contrast(1.1); /* Estetiškas Nordic-stiliaus filtras */
+            opacity: 0.9;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        .map-container:hover {
+            filter: grayscale(0.3) contrast(1);
+            opacity: 1;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         /* Compact Hero Form */
         .hero-mini-form {
             max-width: 480px;
@@ -347,6 +369,16 @@
             <h1>Pop-up erdvės nuoma Vilniaus senamiestyje</h1>
             <p class="lead">Ieškote jaukios, estetiškos ir gyvos vietos savo prekių ženklo pristatymui, kūrybinėms dirbtuvėms ar laikinai parduotuvei? Kviečiame įsikurti „Baltas Miškas“ erdvėje Raugyklos g. 6!</p>
             
+            <!-- Google Maps Embed Layer (Nordic Style Filtered) -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2306.969188094776!2d25.2797686!3d54.674987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd9413bf5408a7%3A0xe67cb560b0e51325!2sRaugyklos%20g.%206%2C%2001140%20Vilnius!5e0!3m2!1slt!2slt!4v1710000000000!5m2!1slt!2slt" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
             <!-- Quick Mini-Form -->
             <div class="hero-mini-form">
                 <form action="https://tally.so/r/q4aQj5" method="POST">
@@ -377,7 +409,7 @@
                     <span>1 mėnuo (su viešinimo paslaugomis):</span>
                     <strong>550 €</strong>
                 </div>
-                <span class="pricing-note">* Jokių papildomų procentų nuo apyvartos ar paslėptų komisinių mokesčių.</span>
+                <span class="pricing-note">* Jokių papildomų komisinių mokesčių ar procentų nuo apyvartos. Pop-up autorius gauna 100% nuo pardavimų.</span>
             </div>
 
             <div class="social-proof">
@@ -389,7 +421,7 @@
         <!-- SECTION 2: ABOUT THE SPACE -->
         <section>
             <h2>Apie erdvę</h2>
-            <p>Mūsų pop-up erdvė yra įsikūrusi strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno i r išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
+            <p>Mūsų pop-up erdvė yra įsikūrusi strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ir išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
             <p>Erdvė sukurta remiantis švaria, šviesia ir minimalistine estetika. Neutralios linijos ir puikus natūralus apšvietimas leidžia lengvai bei greitai transformuoti patalpas pagal jūsų prekių ženklo identitetą, kad jūsų kuriami produktai išliktų pagrindiniu ekspozicijos akcentu.</p>
         </section>
 
@@ -412,7 +444,7 @@
             <ul class="original-list">
                 <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės.</li>
                 <li><strong>Naujienlaiškis:</strong> Informacijos apie jūsų pop-up parduotuvės atsidarymą, išskirtinius produktus ar organizuojamas dirbtuves įtraukimas į kassavaitinį „Baltas Miškas“ naujienlaiškį.</li>
-                <li><strong>Bendruomenė:</strong> Jūsų prekių ženklas bus organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą nuo pat pirmosios dienos.</li>
+                <li><strong>Bendruomenė:</strong> Jūsų prekių ženklas bude organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą nuo pat pirmosios dienos.</li>
             </ul>
         </section>
 
@@ -488,15 +520,14 @@
             </div>
         </section>
 
-        <!-- SECTION 6: TERMS & RESPONSIBILITIES -->
-        <section id="taisykles">
-            <h2>Svarbi informacija ir taisyklės</h2>
-            <p>Siekdami palaikyti aukštą bendrą kokybės standartą ir užtikrinti sklandų bendradarbiavimą, nuomininkų prašome laikytis šių esminių nuostatų:</p>
+        <!-- SECTION 6: SERVICE TERMS & PAYMENTS -->
+        <section id="atsiskaitymas">
+            <h2>Prekių pristatymas ir atsiskaitymas</h2>
+            <p>Siekdami užtikrinti visiškai skaidrią, partneryste grįstą eigą, vadovaujamės šiomis keliomis taisyklėmis:</p>
             <ul class="original-list">
-                <li><strong>Pasiruošimo laikas (Setup):</strong> Prekių atsivežimo, išsidėliojimo bei salės paruošimo laikas derinamas iš anksto individualiai. Įprastai ekspozicija ruošiama nuomos laikotarpio išvakarėse arba pirmosios nuomos dienos ryte iki oficialaus atsidarymo.</li>
-                <li><strong>Darbo laikas ir priežiūra:</strong> Nuomininkas pats pilnai atsako už savo pop-up parduotuvės darbo valandų užtikrinimą, klientų aptarnavimą, prekių saugumą bei tiesioginį pardavimų vykdymą renginio metu.</li>
-                <li><strong>Tvarka ir švara:</strong> Erdvė nuomininkams perduodama visiškai švari ir paruošta darbui. Pasibaigus nuomos terminui, patalpas tikimės susigrąžinti tokios pačios tvarkingos būklės, kokios jos ir buvo perduotos (be paliktų šiukšlių, pakuočių ar ekspozicijos likučių).</li>
-                <li><strong>Atsakomybė:</strong> Nuomos laikotarpiu nuomininkas prisiima pilną materialinę atsakomybę už erdvėje esančią įrangą, baldus bei bendrą patalpų būklę.</li>
+                <li><strong>Apyvartos atidavimas:</strong> Netaikome jokių paslėptų mokesčių ar procentų nuo jūsų pardavimų. Pop-up autorius gauna pilną 100% sumą už visas renginio metu parduotas prekes.</li>
+                <li><strong>Pasiruošimas ir likučiai:</strong> Kolekcijos pristatymo bei išsidėliojimo laikas derinamas iš anksto. Pasibaigus nuomos laikotarpiui, prekių likučiai supakuojami ir atsiimami suderintu laiku, o erdvė paliekama tvarkinga.</li>
+                <li><strong>Atsakomybė:</strong> „Baltas Miškas“ komanda rūpinasi kasdienine tvarka, salės priežiūra ir saugumu darbo valandomis, tačiau už bendrą prekių materialinę atsakomybę (pvz., gamybinius defektus) lieka atsakingas prekių ženklo autorius.</li>
             </ul>
         </section>
 
