@@ -78,7 +78,6 @@
             margin-bottom: 20px;
         }
 
-        /* Hero Intro */
         .hero {
             padding: 20px 0 10px 0;
             margin-bottom: 40px;
@@ -133,7 +132,7 @@
             background-color: var(--color-accent-hover);
         }
 
-        /* Indicative Prices Block */
+        /* Updated Pricing Preview */
         .pricing-preview {
             max-width: 480px;
             margin: 0 auto;
@@ -154,7 +153,7 @@
         .pricing-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             color: var(--color-text-muted);
         }
 
@@ -162,22 +161,32 @@
             color: var(--color-text);
         }
 
-        /* Core Features Alternative (Table representation) */
-        .features-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
+        .pricing-note {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            margin-top: 8px;
+            font-style: italic;
         }
 
-        .features-table td {
-            vertical-align: top;
-            width: 50%;
-            padding: 0 16px 24px 0;
+        /* Content Lists */
+        .original-list {
+            list-style: none;
+            margin-bottom: 24px;
         }
 
-        .features-table td:last-child {
-            padding-right: 0;
-            padding-left: 16px;
+        .original-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: var(--color-text-muted);
+        }
+
+        .original-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--color-text-light);
         }
 
         /* Form Card */
@@ -232,7 +241,6 @@
             resize: vertical;
         }
 
-        /* Custom Checkboxes */
         .checkbox-stack {
             display: block;
             margin-top: 8px;
@@ -296,31 +304,6 @@
             transform: rotate(45deg);
         }
 
-        .form-card button[type="submit"] {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        /* Original Text Lists */
-        .original-list {
-            list-style: none;
-            margin-bottom: 24px;
-        }
-
-        .original-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            color: var(--color-text-muted);
-        }
-
-        .original-list li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--color-text-light);
-        }
-
         .social-proof {
             margin-top: 40px;
             font-size: 0.8rem;
@@ -342,13 +325,6 @@
             }
             h1 {
                 font-size: 1.7rem;
-            }
-            .features-table td {
-                display: block;
-                width: 100%;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                padding-bottom: 20px;
             }
             .form-card {
                 padding: 24px 16px;
@@ -380,21 +356,22 @@
                 </form>
             </div>
 
-            <!-- Indicative Pricing Block -->
+            <!-- Fixed Pricing Block -->
             <div class="pricing-preview">
-                <h4>Orientacinės nuomos kainos</h4>
+                <h4>Fiksuota nuomos kainodara</h4>
                 <div class="pricing-row">
-                    <span>Darbo dienomis (I–IV):</span>
-                    <strong>nuo 45€ / d.</strong>
+                    <span>1 savaitė:</span>
+                    <strong>100 €</strong>
                 </div>
                 <div class="pricing-row">
-                    <span>Savaitgalio paketas (IV–VII):</span>
-                    <strong>nuo 180€</strong>
+                    <span>1 mėnuo (bazinė nuoma):</span>
+                    <strong>400 €</strong>
                 </div>
                 <div class="pricing-row">
-                    <span>Pilna savaitė (7 dienos):</span>
-                    <strong>nuo 290€</strong>
+                    <span>1 mėnuo (su viešinimo paslaugomis):</span>
+                    <strong>550 €</strong>
                 </div>
+                <span class="pricing-note">* Jokių papildomų procentų nuo apyvartos ar paslėptų komisinių mokesčių.</span>
             </div>
 
             <div class="social-proof">
@@ -403,40 +380,38 @@
             </div>
         </section>
 
-        <!-- SECTION 2: ORIGINAL MAIN DESCRIPTION -->
+        <!-- SECTION 2: ABOUT THE SPACE (Full Original Text) -->
         <section>
             <h2>Apie erdvę</h2>
-            <p>Mūsų erdvė yra strategiškai patogioje, mados ir meno mylėtojų pamėgtoje Senamiesčio vietoje. Čia susitinka šviesi, minimalistinė estetika ir funkcionalumas, leidžiantis lengvai transformuoti patalpas pagal jūsų poreikius. Tai puiki galimybė pasiekti naujų klientų auditoriją, gyvai pristatyti savo kolekciją ir sukurti įsimintiną patirtį lankytojams.</p>
+            <p>Mūsų pop-up erdvė yra įsikūrusi strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ir išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
+            <p>Erdvė sukurta remiantis švaria, šviesia ir minimalistine estetika. Neutralios linijos ir puikus natūralus apšvietimas leidžia lengvai bei greitai transformuoti patalpas pagal jūsų prekių ženklo identitetą, kad jūsų kuriami produktai išliktų pagrindiniu ekspozicijos akcentu.</p>
         </section>
 
-        <!-- SECTION 3: KEY ADVANTAGES (Original Content) -->
+        <!-- SECTION 3: WHAT WE OFFER / INCLUDED (Full Detail) -->
         <section>
-            <h2>Ką mes siūlome?</h2>
-            <table class="features-table">
-                <tr>
-                    <td>
-                        <h3>Pilna infrastruktūra</h3>
-                        <p>Erdvėje rasite viską, ko reikia sklandžiam startui: profesionalų apšvietimą, drabužių kabyklas (bėgius), ekspozicinius staliukus, veidrodžius bei matavimosi kabiną.</p>
-                    </td>
-                    <td>
-                        <h3>Komunikacinis palaikymas</h3>
-                        <p>Apie jūsų organizuojamą pop-up renginį mielai pasidalinsime „Baltas Miškas“ socialiniuose tinkluose ir naujienlaiškyje, taip padėdami pritraukti dar daugiau lankytojų.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h3>Papildomi patogumai</h3>
-                        <p>Nuomininkų patogumui įrengta mini virtuvėlė, sanitarinis mazgas bei veikia greitas bevielis internetas (Wi-Fi).</p>
-                    </td>
-                    <td>
-                        <h3>Lankstus patekimas</h3>
-                        <p>Prekių išsikrovimas yra visiškai paprastas ir patogus – automobilį galima trumpam pastatyti tiesiai prie pagrindinių įėjimo durų.</p>
-                    </td>
-                </tr>
-            </table>
+            <h2>Kas įskaičiuota į nuomą?</h2>
+            <p>Siekdami, kad jūsų pop-up parduotuvės ar renginio startas būtų kuo sklandesnis, paruošėme visą reikalingą bazinę infrastruktūrą:</p>
+            <ul class="original-list">
+                <li><strong>Ekspozicijos įranga:</strong> Profesionalūs, tvirti drabužių bėgiai (kabyklos), minimalistiniai ekspoziciniai staliukai bei lentynos aksesuarams ar smulkiems daiktams eksponuoti.</li>
+                <li><strong>Matavimosi zona:</strong> Įrengta patogi, estetiška matavimosi kabina su dideliu veidrodžiu bei specialiai pritaikytu apšvietimu jūsų klientų patogumui.</li>
+                <li><strong>Apšvietimo sistema:</strong> Kokybiški kryptiniai šviestuvai, kuriuos galima reguliuoti ir nukreipti būtent į tas vietas, kurias norite išryškinti labiausiai.</li>
+                <li><strong>Komunaliniai patogumai:</strong> Greitas, neribotas bevielis internetas (Wi-Fi), mini virtuvėlė personalo poreikiams bei sanitarinis mazgas (WC). Visi komunaliniai mokesčiai jau yra įskaičiuoti į nuomos kainą.</li>
+                <li><strong>Patogi logistika:</strong> Paprastas ir greitas prekių bei įrangos išsikrovimas – automobiliu galima trumpam teisėtai sustoti tiesiai prie pat pagrindinių įėjimo durų.</li>
+            </ul>
         </section>
 
-        <!-- SECTION 4: FULL APPLICATION FORM -->
+        <!-- SECTION 4: MARKETING & PROMOTION (Full Detail) -->
+        <section>
+            <h2>Viešinimas ir komunikacija</h2>
+            <p>Pasirinkus nuomos planą su viešinimo paslaugomis (550 €/mėn.), jūsų projektui suteikiame tiesioginę prieigą prie lojalios „Baltas Miškas“ auditorijos:</p>
+            <ul class="original-list">
+                <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės.</li>
+                <li><strong>Naujienlaiškis:</strong> Informacijos apie jūsų pop-up parduotuvės atsidarymą, išskirtinius produktus ar organizuojamas dirbtuves įtraukimas į kassavaitinį „Baltas Miškas“ naujienlaiškį.</li>
+                <li><strong>Bendruomenė:</strong> Jūsų prekės ženklas bus organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą nuo pat pirmosios dienos.</li>
+            </ul>
+        </section>
+
+        <!-- SECTION 5: FULL APPLICATION FORM -->
         <section id="uzklausa">
             <div class="form-card">
                 <h2>Išsami rezervacijos užklausa</h2>
@@ -489,7 +464,7 @@
 
                     <div class="form-group">
                         <label for="duration-full">Pageidaujamas laikotarpis ir trukmė *</label>
-                        <input type="text" id="duration-full" name="duration" class="form-control" placeholder="Pvz.: Birželio vidurys, 1 savaitė" required>
+                        <input type="text" id="duration-full" name="duration" class="form-control" placeholder="Pvz.: Nuo rugsėjo 1 d., 2 savaitėms" required>
                     </div>
 
                     <div class="form-group">
@@ -503,16 +478,15 @@
             </div>
         </section>
 
-        <!-- SECTION 5: DETAILED SPECIFICATIONS & AMENITIES (Original Content) -->
-        <section id="detales">
-            <h2>Erdvės techniniai duomenys ir taisyklės</h2>
-            <p>Siekdami užtikrinti darnią visų kūrėjų patirtį, dalinamės svarbiausiomis detalėmis:</p>
+        <!-- SECTION 6: TERMS & RESPONSIBILITIES (Full Detail) -->
+        <section id="taisykles">
+            <h2>Svarbi informacija ir taisyklės</h2>
+            <p>Siekdami palaikyti aukštą bendrą kokybės standartą ir užtikrinti sklandų bendradarbiavimą, nuomininkų prašome laikytis šių esminių nuostatų:</p>
             <ul class="original-list">
-                <li><strong>Bendras plotas:</strong> 24 m² šviesios, taisyklingos formos ekspozicinės erdvės su vitrininiu langu.</li>
-                <li><strong>Minimali nuoma:</strong> Rekomenduojame nuomotis minimaliai 3–4 dienas (pavyzdžiui, savaitgaliui: ketvirtadienį–sekmadienį), kad pasiektumėte optimalų lankytojų srautą.</li>
-                <li><strong>Baldų išdėstymas:</strong> Visi ekspoziciniai baldai ir kabyklos yra mobilūs, todėl erdvės išdėstymą galite laisvai pritaikyti prie savo kolekcijos vizualinės stilistikos.</li>
-                <li><strong>Pasiruošimo laikas:</strong> Pasiruošimo ir prekių susidėliojimo (raund-up) laikas yra derinamas individualiai – dažniausiai nuomos išvakarėse arba pirmosios dienos ryte.</li>
-                <li><strong>Švara ir tvarka:</strong> Tikimės, kad pasibaigus nuomos laikotarpiui erdvė bus palikta tokia pat tvarkinga ir švari, kokia buvo perduota.</li>
+                <li><strong>Pasiruošimo laikas (Setup):</strong> Prekių atsivežimo, išsidėliojimo bei salės paruošimo laikas derinamas iš anksto individualiai. Įprastai ekspozicija ruošiama nuomos laikotarpio išvakarėse arba pirmosios nuomos dienos ryte iki oficialaus atsidarymo.</li>
+                <li><strong>Darbo laikas ir priežiūra:</strong> Nuomininkas pats pilnai atsako už savo pop-up parduotuvės darbo valandų užtikrinimą, klientų aptarnavimą, prekių saugumą bei tiesioginį pardavimų vykdymą renginio metu.</li>
+                <li><strong>Tvarka ir švara:</strong> Erdvė nuomininkams perduodama visiškai švari ir paruošta darbui. Pasibaigus nuomos terminui, patalpas tikimės susigrąžinti tokios pačios tvarkingos būklės, kokios jos ir buvo perduotos (be paliktų šiukšlių, pakuočių ar ekspozicijos likučių).</li>
+                <li><strong>Atsakomybė:</strong> Nuomos laikotarpiu nuomininkas prisiima pilną materialinę atsakomybę už erdvėje esančią įrangą, baldus bei bendrą patalpų būklę.</li>
             </ul>
         </section>
 
