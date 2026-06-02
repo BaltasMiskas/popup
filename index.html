@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop-up Erdvės Nuoma — Baltas Miškas</title>
     <style>
-        /* Minimalist style variables */
         :root {
             --color-text: #111111;
-            --color-text-muted: #555555;
-            --color-text-light: #999999;
+            --color-text-muted: #444444;
+            --color-text-light: #888888;
             --color-bg: #ffffff;
             --color-bg-secondary: #fafafa;
             --color-border: #e2e2e2;
@@ -46,22 +45,481 @@
         }
 
         section {
-            margin-bottom: 70px;
+            margin-bottom: 60px;
         }
 
-        /* Typography */
         h1 {
             font-size: 2.1rem;
             font-weight: 400;
             line-height: 1.3;
             letter-spacing: -0.02em;
             margin-bottom: 18px;
+            text-align: center;
         }
 
         h2 {
             font-size: 1.35rem;
             font-weight: 400;
             letter-spacing: -0.01em;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Hero Intro */
+        .hero {
+            padding: 20px 0 10px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero p.lead {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 32px auto;
+        }
+
+        /* Compact Hero Form */
+        .hero-mini-form {
+            max-width: 480px;
+            margin: 0 auto 32px auto;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            padding: 24px;
+        }
+
+        .hero-mini-form .mini-group {
+            margin-bottom: 16px;
+        }
+
+        .hero-mini-form label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent-hover);
+        }
+
+        /* Indicative Prices Block */
+        .pricing-preview {
+            max-width: 480px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            border-top: 1px dashed var(--color-border);
+            padding-top: 16px;
+        }
+
+        .pricing-preview h4 {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            color: var(--color-text-muted);
+        }
+
+        .pricing-row strong {
+            color: var(--color-text);
+        }
+
+        /* Core Features Alternative (Table representation) */
+        .features-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .features-table td {
+            vertical-align: top;
+            width: 50%;
+            padding: 0 16px 24px 0;
+        }
+
+        .features-table td:last-child {
+            padding-right: 0;
+            padding-left: 16px;
+        }
+
+        /* Form Card */
+        .form-card {
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            padding: 40px;
+        }
+
+        .form-card h2 {
+            border-bottom: none;
+            margin-bottom: 4px;
+            padding-bottom: 0;
+        }
+
+        .form-card p.form-subtitle {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 11px 12px;
+            font-family: var(--font-stack);
+            font-size: 0.95rem;
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            background-color: #ffffff;
+            border-radius: 0;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--color-border-focus);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Custom Checkboxes */
+        .checkbox-stack {
+            display: block;
+            margin-top: 8px;
+        }
+
+        .checkbox-item {
+            display: block;
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 0.92rem;
+            color: var(--color-text-muted);
+            user-select: none;
+        }
+
+        .checkbox-item input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            height: 16px;
+            width: 16px;
+            border: 1px solid var(--color-border);
+            background-color: #ffffff;
+        }
+
+        .checkbox-item:hover input ~ .checkmark {
+            border-color: var(--color-text-light);
+        }
+
+        .checkbox-item input:checked ~ .checkmark {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkbox-item input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .checkbox-item .checkmark:after {
+            left: 5px;
+            top: 1px;
+            width: 4px;
+            height: 8px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .form-card button[type="submit"] {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Original Text Lists */
+        .original-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .original-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: var(--color-text-muted);
+        }
+
+        .original-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--color-text-light);
+        }
+
+        .social-proof {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .social-proof-brands {
+            color: #444444;
+            font-weight: 500;
+            margin-left: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .page-wrapper {
+                padding: 30px 0;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .features-table td {
+                display: block;
+                width: 100%;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                padding-bottom: 20px;
+            }
+            .form-card {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        
+        <!-- SECTION 1: HERO & INTERACTIVE HEADER -->
+        <section class="hero">
+            <h1>Pop-up erdvės nuoma Vilniaus senamiestyje</h1>
+            <p class="lead">Ieškote jaukios, estetiškos ir gyvos vietos savo prekių ženklo pristatymui, kūrybinėms dirbtuvėms ar laikinai parduotuvei? Kviečiame įsikurti „Baltas Miškas“ erdvėje Raugyklos g. 6!</p>
+            
+            <!-- Quick Mini-Form -->
+            <div class="hero-mini-form">
+                <form action="https://tally.so/r/q4aQj5" method="POST">
+                    <div class="mini-group">
+                        <label for="quick-dates">Įveskite norimas pop-up nuomos datas</label>
+                        <input type="text" id="quick-dates" name="duration" class="form-control" placeholder="Pvz.: Birželio 15–21 d." required>
+                    </div>
+                    <div class="mini-group">
+                        <label for="quick-email">Jūsų el. paštas</label>
+                        <input type="email" id="quick-email" name="email" class="form-control" placeholder="vardas@pavyzdys.lt" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Tikrinti prieinamumą</button>
+                </form>
+            </div>
+
+            <!-- Indicative Pricing Block -->
+            <div class="pricing-preview">
+                <h4>Orientacinės nuomos kainos</h4>
+                <div class="pricing-row">
+                    <span>Darbo dienomis (I–IV):</span>
+                    <strong>nuo 45€ / d.</strong>
+                </div>
+                <div class="pricing-row">
+                    <span>Savaitgalio paketas (IV–VII):</span>
+                    <strong>nuo 180€</strong>
+                </div>
+                <div class="pricing-row">
+                    <span>Pilna savaitė (7 dienos):</span>
+                    <strong>nuo 290€</strong>
+                </div>
+            </div>
+
+            <div class="social-proof">
+                <span>Erdve pasitiki:</span>
+                <span class="social-proof-brands">Lietuvos dizaineriai / Nepriklausomi kūrėjai / Baltijos prekių ženklai</span>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ORIGINAL MAIN DESCRIPTION -->
+        <section>
+            <h2>Apie erdvę</h2>
+            <p>Mūsų erdvė yra strategiškai patogioje, mados ir meno mylėtojų pamėgtoje Senamiesčio vietoje. Čia susitinka šviesi, minimalistinė estetika ir funkcionalumas, leidžiantis lengvai transformuoti patalpas pagal jūsų poreikius. Tai puiki galimybė pasiekti naujų klientų auditoriją, gyvai pristatyti savo kolekciją ir sukurti įsimintiną patirtį lankytojams.</p>
+        </section>
+
+        <!-- SECTION 3: KEY ADVANTAGES (Original Content) -->
+        <section>
+            <h2>Ką mes siūlome?</h2>
+            <table class="features-table">
+                <tr>
+                    <td>
+                        <h3>Pilna infrastruktūra</h3>
+                        <p>Erdvėje rasite viską, ko reikia sklandžiam startui: profesionalų apšvietimą, drabužių kabyklas (bėgius), ekspozicinius staliukus, veidrodžius bei matavimosi kabiną.</p>
+                    </td>
+                    <td>
+                        <h3>Komunikacinis palaikymas</h3>
+                        <p>Apie jūsų organizuojamą pop-up renginį mielai pasidalinsime „Baltas Miškas“ socialiniuose tinkluose ir naujienlaiškyje, taip padėdami pritraukti dar daugiau lankytojų.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Papildomi patogumai</h3>
+                        <p>Nuomininkų patogumui įrengta mini virtuvėlė, sanitarinis mazgas bei veikia greitas bevielis internetas (Wi-Fi).</p>
+                    </td>
+                    <td>
+                        <h3>Lankstus patekimas</h3>
+                        <p>Prekių išsikrovimas yra visiškai paprastas ir patogus – automobilį galima trumpam pastatyti tiesiai prie pagrindinių įėjimo durų.</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- SECTION 4: FULL APPLICATION FORM -->
+        <section id="uzklausa">
+            <div class="form-card">
+                <h2>Išsami rezervacijos užklausa</h2>
+                <p class="form-subtitle">Užpildykite pilną formą žemiau ir suderinkime jūsų pop-up viziją, koncepciją bei laisvas datas.</p>
+                
+                <form action="https://tally.so/r/q4aQj5" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="brand-name">Prekių ženklo pavadinimas *</label>
+                        <input type="text" id="brand-name" name="brand_name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullname">Vardas, Pavardė *</label>
+                        <input type="text" id="fullname" name="fullname" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-full">El. pašto adresas *</label>
+                        <input type="email" id="email-full" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefono numeris *</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Svetainė arba Instagram nuoroda *</label>
+                        <input type="url" id="website" name="website" class="form-control" placeholder="https://" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kokio pobūdžio pop-up planuojate?</label>
+                        <div class="checkbox-stack">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="type" value="Prekyba"> Naujos kolekcijos pristatymas ir prekyba
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="type" value="Dirbtuves"> Kūrybinės dirbtuvės / Edukacinis renginys
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="type" value="Kita"> Privatus klientų susitikimas / Užsakymų atsiėmimas
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration-full">Pageidaujamas laikotarpis ir trukmė *</label>
+                        <input type="text" id="duration-full" name="duration" class="form-control" placeholder="Pvz.: Birželio vidurys, 1 savaitė" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Trumpas idėjos pristatymas ar papildomi komentarai</label>
+                        <textarea id="comments" name="comments" class="form-control"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Siųsti užklausą</button>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 5: DETAILED SPECIFICATIONS & AMENITIES (Original Content) -->
+        <section id="detales">
+            <h2>Erdvės techniniai duomenys ir taisyklės</h2>
+            <p>Siekdami užtikrinti darnią visų kūrėjų patirtį, dalinamės svarbiausiomis detalėmis:</p>
+            <ul class="original-list">
+                <li><strong>Bendras plotas:</strong> 24 m² šviesios, taisyklingos formos ekspozicinės erdvės su vitrininiu langu.</li>
+                <li><strong>Minimali nuoma:</strong> Rekomenduojame nuomotis minimaliai 3–4 dienas (pavyzdžiui, savaitgaliui: ketvirtadienį–sekmadienį), kad pasiektumėte optimalų lankytojų srautą.</li>
+                <li><strong>Baldų išdėstymas:</strong> Visi ekspoziciniai baldai ir kabyklos yra mobilūs, todėl erdvės išdėstymą galite laisvai pritaikyti prie savo kolekcijos vizualinės stilistikos.</li>
+                <li><strong>Pasiruošimo laikas:</strong> Pasiruošimo ir prekių susidėliojimo (raund-up) laikas yra derinamas individualiai – dažniausiai nuomos išvakarėse arba pirmosios dienos ryte.</li>
+                <li><strong>Švara ir tvarka:</strong> Tikimės, kad pasibaigus nuomos laikotarpiui erdvė bus palikta tokia pat tvarkinga ir švari, kokia buvo perduota.</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>            letter-spacing: -0.01em;
             margin-bottom: 24px;
             padding-bottom: 10px;
             border-bottom: 1px solid var(--color-border);
