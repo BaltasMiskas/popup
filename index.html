@@ -66,12 +66,6 @@
             border-bottom: 1px solid var(--color-border);
         }
 
-        h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
         p {
             font-size: 1rem;
             color: var(--color-text-muted);
@@ -169,7 +163,7 @@
             font-style: italic;
         }
 
-        /* Content Lists */
+        /* Original Content Lists */
         .original-list {
             list-style: none;
             margin-bottom: 24px;
@@ -189,31 +183,20 @@
             color: var(--color-text-light);
         }
 
-        /* Brand Examples Grid */
-        .brand-examples {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 16px;
+        /* Clean Social Proof Subtitle */
+        .social-proof {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
         }
 
-        .brand-card {
-            background-color: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
-            padding: 20px;
-        }
-
-        .brand-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--color-text);
-        }
-
-        .brand-card p {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-            line-height: 1.5;
+        .social-proof-brands {
+            color: #444444;
+            font-weight: 500;
+            margin-left: 6px;
         }
 
         /* Form Card */
@@ -331,31 +314,12 @@
             transform: rotate(45deg);
         }
 
-        .social-proof {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: var(--color-text-light);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .social-proof-brands {
-            color: #444444;
-            font-weight: 500;
-            margin-left: 6px;
-        }
-
         @media (max-width: 600px) {
             .page-wrapper {
                 padding: 30px 0;
             }
             h1 {
                 font-size: 1.7rem;
-            }
-            .brand-examples {
-                grid-template-columns: 1fr;
-                gap: 12px;
             }
             .form-card {
                 padding: 24px 16px;
@@ -406,7 +370,7 @@
             </div>
 
             <div class="social-proof">
-                <span>Erdve pasitiki:</span>
+                <span>Jau vykusių pop-up pavyzdžiai:</span>
                 <span class="social-proof-brands">studija_m2, rigidus.wear, tanché, kūnui kūnui, d96_wear, anam mót, formuniform</span>
             </div>
         </section>
@@ -418,44 +382,7 @@
             <p>Erdvė sukurta remiantis švaria, šviesia ir minimalistine estetika. Neutralios linijos ir puikus natūralus apšvietimas leidžia lengvai bei greitai transformuoti patalpas pagal jūsų prekių ženklo identitetą, kad jūsų kuriami produktai išliktų pagrindiniu ekspozicijos akcentu.</p>
         </section>
 
-        <!-- SECTION 3: REAL POP-UP EXAMPLES -->
-        <section>
-            <h2>Jau vykusių pop-up pavyzdžiai</h2>
-            <p>Šioje erdvėje savo unikalias laikinąsias parduotuves, kolekcijų pristatymus bei susitikimus su klientais jau sėkmingai surengė gausus būrys žinomų nepriklausomų kūrėjų:</p>
-            
-            <div class="brand-examples">
-                <div class="brand-card">
-                    <h3>studija_m2</h3>
-                    <p>Išskirtinio dizaino autorinių drabužių ir mados linijos pop-up pristatymas.</p>
-                </div>
-                <div class="brand-card">
-                    <h3>rigidus.wear</h3>
-                    <p>Minimalistinės ir tvarios miesto mados kolekcijos fizinis pristatymas Senamiestyje.</p>
-                </div>
-                <div class="brand-card">
-                    <h3>tanché</h3>
-                    <p>Konceptualaus dizaino ir išraiškingų siluetų mados prekių ženklo laikinė erdvė.</p>
-                </div>
-                <div class="brand-card">
-                    <h3>kūnui kūnui</h3>
-                    <p>Jaukaus, artimo ir natūralių medžiagų prekių ženklo pop-up parduotuvė.</p>
-                </div>
-                <div class="brand-card">
-                    <h3>d96_wear</h3>
-                    <p>Miesto estetikos, modernios mados ir tekstūros projektas, pritraukęs lojalius klientus.</p>
-                </div>
-                <div class="brand-card">
-                    <h3>anam mót</h3>
-                    <p>Išskirtinės kokybės, lėtos mados bei subtilių formų mados namų pop-up dienos.</p>
-                </div>
-                <div class="brand-card">
-                    <h3>formuniform</h3>
-                    <p>Garsaus lietuvių dizaino, funkcionalių krepšių ir drabužių prekių ženklo konceptualus pristatymas.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: WHAT WE OFFER / INCLUDED -->
+        <!-- SECTION 3: WHAT WE OFFER / INCLUDED -->
         <section>
             <h2>Kas įskaičiuota į nuomą?</h2>
             <p>Siekdami, kad jūsų pop-up parduotuvės ar renginio startas būtų kuo sklandesnis, paruošėme visą reikalingą bazinę infrastruktūrą:</p>
@@ -468,18 +395,18 @@
             </ul>
         </section>
 
-        <!-- SECTION 5: MARKETING & PROMOTION -->
+        <!-- SECTION 4: MARKETING & PROMOTION -->
         <section>
             <h2>Viešinimas ir komunikacija</h2>
             <p>Pasirinkus nuomos planą su viešinimo paslaugomis (550 €/mėn.), jūsų projektui suteikiame tiesioginę prieigą prie lojalios „Baltas Miškas“ auditorijos:</p>
             <ul class="original-list">
-                <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės.</li>
+                <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos i r Baltijos šalių dizainą vertinantys žmonės.</li>
                 <li><strong>Naujienlaiškis:</strong> Informacijos apie jūsų pop-up parduotuvės atsidarymą, išskirtinius produktus ar organizuojamas dirbtuves įtraukimas į kassavaitinį „Baltas Miškas“ naujienlaiškį.</li>
                 <li><strong>Bendruomenė:</strong> Jūsų prekės ženklas bus organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą nuo pat pirmosios dienos.</li>
             </ul>
         </section>
 
-        <!-- SECTION 6: FULL APPLICATION FORM -->
+        <!-- SECTION 5: FULL APPLICATION FORM -->
         <section id="uzklausa">
             <div class="form-card">
                 <h2>Išsami rezervacijos užklausa</h2>
@@ -546,7 +473,7 @@
             </div>
         </section>
 
-        <!-- SECTION 7: TERMS & RESPONSIBILITIES -->
+        <!-- SECTION 6: TERMS & RESPONSIBILITIES -->
         <section id="taisykles">
             <h2>Svarbi informacija ir taisyklės</h2>
             <p>Siekdami palaikyti aukštą bendrą kokybės standartą ir užtikrinti sklandų bendradarbiavimą, nuomininkų prašome laikytis šių esminių nuostatų:</p>
