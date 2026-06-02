@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop-up Erdvės Nuoma — Baltas Miškas</title>
+    <!-- Importuojami švarūs, estetiški šriftai -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --color-text: #111111;
@@ -12,10 +17,11 @@
             --color-bg: #ffffff;
             --color-bg-secondary: #fafafa;
             --color-border: #e2e2e2;
-            --color-border-focus: #111111;
-            --color-accent: #111111;
-            --color-accent-hover: #333333;
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --color-border-focus: #a16207;
+            --color-accent: #a16207; /* Baltas Miškas akcentinė spalva */
+            --color-accent-hover: #854d0e; 
+            --font-headings: "Playfair Display", Georgia, serif;
+            --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
             --site-max-width: 640px;
         }
 
@@ -30,73 +36,76 @@
         }
 
         body {
-            font-family: var(--font-stack);
+            font-family: var(--font-body);
             color: var(--color-text);
             background-color: var(--color-bg);
-            line-height: 1.65;
+            line-height: 1.75;
             -webkit-font-smoothing: antialiased;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .page-wrapper {
             max-width: var(--site-max-width);
             margin: 0 auto;
-            padding: 60px 0;
+            padding: 90px 0; /* Didesni atstumai viršuje ir apačioje */
         }
 
         section {
-            margin-bottom: 60px;
+            margin-bottom: 80px; /* Daugiau laisvos erdvės tarp sekcijų */
         }
 
         h1 {
-            font-size: 2.1rem;
+            font-family: var(--font-headings);
+            font-size: 2.4rem;
             font-weight: 400;
-            line-height: 1.3;
-            letter-spacing: -0.02em;
-            margin-bottom: 18px;
-            text-align: center;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            margin-bottom: 24px;
+            text-align: left;
         }
 
         h2 {
-            font-size: 1.35rem;
+            font-family: var(--font-headings);
+            font-size: 1.5rem;
             font-weight: 400;
-            letter-spacing: -0.01em;
-            margin-bottom: 24px;
-            padding-bottom: 10px;
+            letter-spacing: 0.01em;
+            margin-bottom: 28px;
+            padding-bottom: 12px;
             border-bottom: 1px solid var(--color-border);
         }
 
         p {
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: var(--color-text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .hero {
-            padding: 20px 0 10px 0;
-            margin-bottom: 40px;
+            padding: 10px 0;
+            margin-bottom: 60px;
         }
 
         .hero p.lead {
-            font-size: 1.1rem;
-            text-align: center;
-            max-width: 560px;
-            margin: 0 auto 32px auto;
+            font-size: 1.15rem;
+            text-align: left; /* Išlygiuota iš kairės */
+            line-height: 1.65;
+            color: var(--color-text-muted);
+            margin: 0 0 40px 0;
         }
 
         /* Minimalist Google Maps Embed Container */
         .map-container {
             width: 100%;
-            height: 250px;
-            margin-bottom: 32px;
+            height: 280px;
+            margin-bottom: 40px;
             border: 1px solid var(--color-border);
-            filter: grayscale(1) contrast(1.1); /* Estetiškas Nordic-stiliaus filtras */
-            opacity: 0.9;
+            filter: grayscale(1) contrast(1.05); /* Skandinaviškas filtras */
+            opacity: 0.85;
             transition: filter 0.3s ease, opacity 0.3s ease;
         }
 
         .map-container:hover {
-            filter: grayscale(0.3) contrast(1);
+            filter: grayscale(0.2) contrast(1);
             opacity: 1;
         }
 
@@ -106,26 +115,27 @@
             border: 0;
         }
 
-        /* Compact Hero Form */
+        /* Expanded Hero Form (pilno turinio pločio) */
         .hero-mini-form {
-            max-width: 480px;
-            margin: 0 auto 32px auto;
+            width: 100%; 
             background-color: var(--color-bg-secondary);
             border: 1px solid var(--color-border);
-            padding: 24px;
+            padding: 32px;
+            margin-bottom: 40px;
         }
 
         .hero-mini-form .mini-group {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .hero-mini-form label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
         }
 
         .btn-primary {
@@ -133,10 +143,10 @@
             background-color: var(--color-accent);
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 30px;
+            padding: 16px 30px;
             font-size: 0.95rem;
             font-weight: 500;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.03em;
             transition: background-color 0.2s ease;
             border: none;
             cursor: pointer;
@@ -150,51 +160,53 @@
 
         /* Pricing Preview */
         .pricing-preview {
-            max-width: 480px;
-            margin: 0 auto;
-            font-size: 0.9rem;
+            width: 100%;
+            font-size: 0.92rem;
             border-top: 1px dashed var(--color-border);
-            padding-top: 16px;
+            padding-top: 24px;
+            margin-bottom: 40px;
         }
 
         .pricing-preview h4 {
-            font-weight: 600;
-            text-transform: uppercase;
             font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--color-text-light);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .pricing-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             color: var(--color-text-muted);
         }
 
         .pricing-row strong {
             color: var(--color-text);
+            font-weight: 500;
         }
 
         .pricing-note {
             display: block;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--color-text-light);
-            margin-top: 8px;
+            margin-top: 12px;
             font-style: italic;
+            line-height: 1.5;
         }
 
         /* Content Lists */
         .original-list {
             list-style: none;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         .original-list li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
+            padding-left: 24px;
+            margin-bottom: 16px;
             color: var(--color-text-muted);
         }
 
@@ -202,42 +214,42 @@
             content: "—";
             position: absolute;
             left: 0;
-            color: var(--color-text-light);
+            color: var(--color-accent); /* Akcentinis brūkšnys */
         }
 
         /* Social Proof Custom Section */
         .social-proof {
-            margin-top: 40px;
-            font-size: 0.8rem;
+            margin-top: 50px;
+            font-size: 0.78rem;
             color: var(--color-text-light);
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            text-align: center;
+            text-align: left;
         }
 
         .social-proof-brands {
-            color: #444444;
+            color: var(--color-text-muted);
             font-weight: 500;
-            margin-left: 6px;
+            margin-left: 4px;
         }
 
         /* Form Card */
         .form-card {
             background-color: var(--color-bg-secondary);
             border: 1px solid var(--color-border);
-            padding: 40px;
+            padding: 48px;
         }
 
         .form-card h2 {
             border-bottom: none;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             padding-bottom: 0;
         }
 
         .form-card p.form-subtitle {
             font-size: 0.95rem;
             color: var(--color-text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         /* Info Alert Box inside Form Card */
@@ -245,27 +257,28 @@
             font-size: 0.88rem;
             color: var(--color-text-muted);
             background-color: #ffffff;
-            border-left: 2px solid var(--color-text-light);
-            padding: 12px 16px;
-            margin-bottom: 30px;
-            line-height: 1.5;
+            border-left: 2px solid var(--color-accent);
+            padding: 16px;
+            margin-bottom: 32px;
+            line-height: 1.6;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .form-group label {
             display: block;
             font-size: 0.88rem;
             font-weight: 500;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            color: var(--color-text);
         }
 
         .form-control {
             width: 100%;
-            padding: 11px 12px;
-            font-family: var(--font-stack);
+            padding: 12px 14px;
+            font-family: var(--font-body);
             font-size: 0.95rem;
             color: var(--color-text);
             border: 1px solid var(--color-border);
@@ -280,20 +293,20 @@
         }
 
         textarea.form-control {
-            min-height: 100px;
+            min-height: 120px;
             resize: vertical;
         }
 
         .checkbox-stack {
             display: block;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .checkbox-item {
             display: block;
             position: relative;
-            padding-left: 26px;
-            margin-bottom: 10px;
+            padding-left: 28px;
+            margin-bottom: 12px;
             cursor: pointer;
             font-size: 0.92rem;
             color: var(--color-text-muted);
@@ -312,8 +325,8 @@
             position: absolute;
             top: 2px;
             left: 0;
-            height: 16px;
-            width: 16px;
+            height: 18px;
+            width: 18px;
             border: 1px solid var(--color-border);
             background-color: #ffffff;
         }
@@ -338,10 +351,10 @@
         }
 
         .checkbox-item .checkmark:after {
-            left: 5px;
-            top: 1px;
+            left: 6px;
+            top: 2px;
             width: 4px;
-            height: 8px;
+            height: 9px;
             border: solid white;
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
@@ -349,13 +362,16 @@
 
         @media (max-width: 600px) {
             .page-wrapper {
-                padding: 30px 0;
+                padding: 40px 0;
             }
             h1 {
-                font-size: 1.7rem;
+                font-size: 1.9rem;
             }
             .form-card {
-                padding: 24px 16px;
+                padding: 28px 20px;
+            }
+            .hero-mini-form {
+                padding: 20px;
             }
         }
     </style>
@@ -379,7 +395,7 @@
                 </iframe>
             </div>
 
-            <!-- Quick Mini-Form -->
+            <!-- Quick Mini-Form (Expanded to Match Site Width) -->
             <div class="hero-mini-form">
                 <form action="https://tally.so/r/q4aQj5" method="POST">
                     <div class="mini-group">
@@ -390,7 +406,7 @@
                         <label for="quick-email">Jūsų el. paštas</label>
                         <input type="email" id="quick-email" name="email" class="form-control" placeholder="vardas@pavyzdys.lt" required>
                     </div>
-                    <button type="submit" class="btn-primary">Tikrinti prieinamumą</button>
+                    <button type="submit" class="btn-primary">Pateikti užklausą</button>
                 </form>
             </div>
 
@@ -430,7 +446,7 @@
             <h2>Kaip veikia „Baltas Miškas“ pop-up?</h2>
             <p>Siekdami, kad jūsų prekių ženklo pristatymas reikalautų kuo mažiau papildomų organizacinių rūpesčių, mes užtikriname pilną infrastruktūrą ir kasdienį parduotuvės operacijų valdymą:</p>
             <ul class="original-list">
-                <li><strong>Pilnas klientų aptarnavimas:</strong> Viso pop-up laikotarpiu parduotuvėje dirba, klientus konsultuoja bei pardavimus vykdo profesionali „Baltas Miškas“ komanda.</li>
+                <li><strong>Pilnas klientų aptarnavimas:</strong> Viso pop-up laikotarpiu parduotuvėje dirba, klientus konsultuoja bei pardavimus怸 vykdo profesionali „Baltas Miškas“ komanda.</li>
                 <li><strong>Prekių ekspozicija:</strong> Jūsų užduotis – tiesiog pristatyti prekes į vietą ir nuspręsti, kaip jos turi būti išeksponuotos. Mes suteikiame visas reikalingas minimalistines kabyklas, bėgius bei ekspozicinius staliukus.</li>
                 <li><strong>Pilnas pardavimų valdymas:</strong> Mes prisiimame visą atsakomybę už kasos aparato operacijas, atsiskaitymus kortelėmis ar grynaisiais bei sklandų pirkimo procesą, tad jums nereikia rūpintis jokia technine įranga.</li>
                 <li><strong>Patogi logistika:</strong> Paprastas ir greitas kolekcijos iškrovimas – automobiliu galima trumpam teisėtai sustoti tiesiai prie pat pagrindinių įėjimo durų, kad prekių perdavimas būtų kuo patogesnis.</li>
@@ -444,7 +460,7 @@
             <ul class="original-list">
                 <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės.</li>
                 <li><strong>Naujienlaiškis:</strong> Informacijos apie jūsų pop-up parduotuvės atsidarymą, išskirtinius produktus ar organizuojamas dirbtuves įtraukimas į kassavaitinį „Baltas Miškas“ naujienlaiškį.</li>
-                <li><strong>Bendruomenė:</strong> Jūsų prekių ženklas bude organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą nuo pat pirmosios dienos.</li>
+                <li><strong>Bendruomenė:</strong> Jūsų prekių ženklas bus organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą nuo pat pirmosios dienos.</li>
             </ul>
         </section>
 
@@ -514,7 +530,7 @@
                         <textarea id="comments" name="comments" class="form-control"></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary">Siųsti užklausą</button>
+                    <button type="submit" class="btn-primary">Pateikti užklausą</button>
 
                 </form>
             </div>
