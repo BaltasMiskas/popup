@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop-up Erdvės Nuoma — Baltas Miškas</title>
-    <!-- Importuojami švarūs, estetiški šriftai -->
+    
+    <!-- Šiaurietiškos estetikos šriftai: Syne (antraštėms) ir DM Sans (tekstui) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --color-text: #111111;
-            --color-text-muted: #444444;
-            --color-text-light: #888888;
+            --color-text: #1a1a1a;
+            --color-text-muted: #555555;
+            --color-text-light: #999999;
             --color-bg: #ffffff;
-            --color-bg-secondary: #fafafa;
-            --color-border: #e2e2e2;
-            --color-border-focus: #a16207;
-            --color-accent: #a16207; /* Baltas Miškas akcentinė spalva */
-            --color-accent-hover: #854d0e; 
-            --font-headings: "Playfair Display", Georgia, serif;
-            --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-            --site-max-width: 640px;
+            --color-bg-secondary: #fbfbfb;
+            --color-border: #eeeeee;
+            --color-border-focus: #1a1a1a;
+            --color-accent: #222222; /* Minimalistinė, griežta monochrominė paletė */
+            --color-accent-hover: #000000; 
+            --font-headings: "Syne", sans-serif;
+            --font-body: "DM Sans", sans-serif;
+            --site-max-width: 600px; /* Dar kompaktiškesnis, elegantiškesnis plotis */
         }
 
         * {
@@ -39,74 +40,75 @@
             font-family: var(--font-body);
             color: var(--color-text);
             background-color: var(--color-bg);
-            line-height: 1.75;
+            line-height: 1.85;
             -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.01em;
             padding: 0 24px;
         }
 
         .page-wrapper {
             max-width: var(--site-max-width);
             margin: 0 auto;
-            padding: 90px 0; /* Didesni atstumai viršuje ir apačioje */
+            padding: 120px 0; /* Maksimali erdvė viršuje ir apačioje */
         }
 
         section {
-            margin-bottom: 80px; /* Daugiau laisvos erdvės tarp sekcijų */
+            margin-bottom: 100px; /* Gilus kvėpavimas tarp sekcijų */
         }
 
         h1 {
             font-family: var(--font-headings);
-            font-size: 2.4rem;
-            font-weight: 400;
-            line-height: 1.25;
-            letter-spacing: -0.01em;
-            margin-bottom: 24px;
-            text-align: left;
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 32px;
+            text-transform: lowercase; /* Konceptualus minimalizmas */
         }
 
         h2 {
             font-family: var(--font-headings);
-            font-size: 1.5rem;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-            margin-bottom: 28px;
-            padding-bottom: 12px;
+            font-size: 1.35rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
             border-bottom: 1px solid var(--color-border);
+            text-transform: lowercase;
         }
 
         p {
-            font-size: 0.98rem;
+            font-size: 0.95rem;
+            font-weight: 300;
             color: var(--color-text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .hero {
-            padding: 10px 0;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .hero p.lead {
-            font-size: 1.15rem;
-            text-align: left; /* Išlygiuota iš kairės */
-            line-height: 1.65;
-            color: var(--color-text-muted);
-            margin: 0 0 40px 0;
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--color-text);
+            margin: 0 0 48px 0;
         }
 
-        /* Minimalist Google Maps Embed Container */
+        /* Minimalist Google Maps Container */
         .map-container {
             width: 100%;
-            height: 280px;
-            margin-bottom: 40px;
+            height: 240px;
+            margin-bottom: 48px;
             border: 1px solid var(--color-border);
-            filter: grayscale(1) contrast(1.05); /* Skandinaviškas filtras */
-            opacity: 0.85;
-            transition: filter 0.3s ease, opacity 0.3s ease;
+            filter: grayscale(1) contrast(1.1); /* Šiaurietiškas griežtas filtras */
+            opacity: 0.7;
+            transition: opacity 0.4s ease;
         }
 
         .map-container:hover {
-            filter: grayscale(0.2) contrast(1);
-            opacity: 1;
+            opacity: 0.9;
         }
 
         .map-container iframe {
@@ -115,27 +117,27 @@
             border: 0;
         }
 
-        /* Expanded Hero Form (pilno turinio pločio) */
+        /* Clean Mini-Form */
         .hero-mini-form {
             width: 100%; 
             background-color: var(--color-bg-secondary);
             border: 1px solid var(--color-border);
-            padding: 32px;
-            margin-bottom: 40px;
+            padding: 40px;
+            margin-bottom: 48px;
         }
 
         .hero-mini-form .mini-group {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .hero-mini-form label {
             display: block;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 8px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--color-text-muted);
+            letter-spacing: 0.08em;
+            color: var(--color-text-light);
         }
 
         .btn-primary {
@@ -143,11 +145,13 @@
             background-color: var(--color-accent);
             color: #ffffff;
             text-decoration: none;
-            padding: 16px 30px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            transition: background-color 0.2s ease;
+            padding: 18px 32px;
+            font-family: var(--font-headings);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
             border: none;
             cursor: pointer;
             width: 100%;
@@ -161,43 +165,45 @@
         /* Pricing Preview */
         .pricing-preview {
             width: 100%;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             border-top: 1px dashed var(--color-border);
-            padding-top: 24px;
-            margin-bottom: 40px;
+            padding-top: 32px;
+            margin-bottom: 48px;
         }
 
         .pricing-preview h4 {
-            font-size: 0.8rem;
+            font-family: var(--font-headings);
+            font-size: 0.75rem;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             color: var(--color-text-light);
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .pricing-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: var(--color-text-muted);
+            font-weight: 300;
         }
 
         .pricing-row strong {
             color: var(--color-text);
-            font-weight: 500;
+            font-weight: 400;
         }
 
         .pricing-note {
             display: block;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--color-text-light);
-            margin-top: 12px;
+            margin-top: 20px;
             font-style: italic;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Content Lists */
+        /* Minimalist Lists */
         .original-list {
             list-style: none;
             margin-bottom: 32px;
@@ -205,24 +211,31 @@
 
         .original-list li {
             position: relative;
-            padding-left: 24px;
-            margin-bottom: 16px;
+            padding-left: 28px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            font-weight: 300;
             color: var(--color-text-muted);
+        }
+
+        .original-list li strong {
+            color: var(--color-text);
+            font-weight: 400;
         }
 
         .original-list li::before {
             content: "—";
             position: absolute;
             left: 0;
-            color: var(--color-accent); /* Akcentinis brūkšnys */
+            color: var(--color-text-light);
         }
 
-        /* Minimalist Image Gallery Grid for Equipment */
+        /* Clean Image Gallery Grid */
         .equipment-gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin: 32px 0;
+            gap: 12px;
+            margin: 40px 0;
         }
 
         .gallery-item {
@@ -234,22 +247,22 @@
 
         .gallery-item img {
             width: 100%;
-            height: 180px;
+            height: 160px;
             object-fit: cover;
-            filter: grayscale(0.1);
-            transition: filter 0.3s ease;
+            filter: grayscale(1) brightness(0.95); /* Itin rami, monochrominė nuotraukų estetika */
+            transition: filter 0.4s ease;
         }
 
         .gallery-item:hover img {
-            filter: grayscale(0);
+            filter: grayscale(0.2) brightness(1);
         }
 
         .gallery-caption {
-            font-size: 0.78rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--color-text-muted);
-            padding: 12px;
+            letter-spacing: 0.06em;
+            color: var(--color-text-light);
+            padding: 10px;
             text-align: center;
             border-top: 1px solid var(--color-border);
             background: #ffffff;
@@ -257,73 +270,76 @@
 
         /* Social Proof Custom Section */
         .social-proof {
-            margin-top: 50px;
-            font-size: 0.78rem;
+            margin-top: 56px;
+            font-size: 0.72rem;
             color: var(--color-text-light);
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            text-align: left;
         }
 
         .social-proof-brands {
             color: var(--color-text-muted);
-            font-weight: 500;
-            margin-left: 4px;
+            font-weight: 400;
+            margin-left: 6px;
         }
 
         /* Form Card */
         .form-card {
             background-color: var(--color-bg-secondary);
             border: 1px solid var(--color-border);
-            padding: 48px;
+            padding: 56px 48px;
         }
 
         .form-card h2 {
             border-bottom: none;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             padding-bottom: 0;
         }
 
         .form-card p.form-subtitle {
-            font-size: 0.95rem;
-            color: var(--color-text-muted);
-            margin-bottom: 32px;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 40px;
         }
 
         /* Info Alert Box inside Form Card */
         .form-notice {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
+            font-weight: 300;
             color: var(--color-text-muted);
             background-color: #ffffff;
-            border-left: 2px solid var(--color-accent);
-            padding: 16px;
-            margin-bottom: 32px;
-            line-height: 1.6;
+            border-left: 1px solid var(--color-text);
+            padding: 20px;
+            margin-bottom: 40px;
+            line-height: 1.7;
         }
 
         .form-card .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .form-card label {
             display: block;
-            font-size: 0.88rem;
-            font-weight: 500;
-            margin-bottom: 8px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-bottom: 10px;
             color: var(--color-text);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 14px;
+            padding: 14px 16px;
             font-family: var(--font-body);
             font-size: 0.95rem;
+            font-weight: 300;
             color: var(--color-text);
             border: 1px solid var(--color-border);
             background-color: #ffffff;
             border-radius: 0;
             outline: none;
-            transition: border-color 0.2s ease;
+            transition: border-color 0.3s ease;
         }
 
         .form-control:focus {
@@ -331,22 +347,23 @@
         }
 
         textarea.form-control {
-            min-height: 120px;
+            min-height: 140px;
             resize: vertical;
         }
 
         .checkbox-stack {
             display: block;
-            margin-top: 10px;
+            margin-top: 14px;
         }
 
         .checkbox-item {
             display: block;
             position: relative;
-            padding-left: 28px;
-            margin-bottom: 12px;
+            padding-left: 32px;
+            margin-bottom: 16px;
             cursor: pointer;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
+            font-weight: 300;
             color: var(--color-text-muted);
             user-select: none;
         }
@@ -361,10 +378,10 @@
 
         .checkmark {
             position: absolute;
-            top: 2px;
+            top: 3px;
             left: 0;
-            height: 18px;
-            width: 18px;
+            height: 16px;
+            width: 16px;
             border: 1px solid var(--color-border);
             background-color: #ffffff;
         }
@@ -389,10 +406,10 @@
         }
 
         .checkbox-item .checkmark:after {
-            left: 6px;
+            left: 5px;
             top: 2px;
-            width: 4px;
-            height: 9px;
+            width: 3px;
+            height: 7px;
             border: solid white;
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
@@ -400,23 +417,23 @@
 
         @media (max-width: 600px) {
             .page-wrapper {
-                padding: 40px 0;
+                padding: 60px 0;
             }
             h1 {
-                font-size: 1.9rem;
+                font-size: 1.8rem;
             }
             .form-card {
-                padding: 28px 20px;
+                padding: 40px 24px;
             }
             .hero-mini-form {
-                padding: 20px;
+                padding: 24px;
             }
             .equipment-gallery {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 16px;
             }
             .gallery-item img {
-                height: 220px;
+                height: 200px;
             }
         }
     </style>
@@ -427,10 +444,10 @@
         
         <!-- SECTION 1: HERO & INTERACTIVE HEADER -->
         <section class="hero">
-            <h1>Pop-up erdvės nuoma Vilniaus senamiestyje</h1>
+            <h1>pop-up erdvės nuoma vilniaus senamiestyje</h1>
             <p class="lead">Ieškote jaukios, estetiškos ir gyvos vietos savo prekių ženklo pristatymui, kūrybinėms dirbtuvėms ar laikinai parduotuvei? Kviečiame įsikurti „Baltas Miškas“ erdvėje Raugyklos g. 6!</p>
             
-            <!-- Google Maps Embed Layer (Nordic Style Filtered) -->
+            <!-- Google Maps Embed Layer -->
             <div class="map-container">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2306.969188094776!2d25.2797686!3d54.674987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd9413bf5408a7%3A0xe67cb560b0e51325!2sRaugyklos%20g.%206%2C%2001140%20Vilnius!5e0!3m2!1slt!2slt!4v1710000000000!5m2!1slt!2slt" 
@@ -440,11 +457,11 @@
                 </iframe>
             </div>
 
-            <!-- Quick Mini-Form (Expanded to Match Site Width) -->
+            <!-- Quick Mini-Form -->
             <div class="hero-mini-form">
                 <form action="https://tally.so/r/q4aQj5" method="POST">
                     <div class="mini-group">
-                        <label for="quick-dates">Įveskite norimas pop-up nuomos datas</label>
+                        <label for="quick-dates">Norimos pop-up nuomos datos</label>
                         <input type="text" id="quick-dates" name="duration" class="form-control" placeholder="Pvz.: Birželio 15–21 d." required>
                     </div>
                     <div class="mini-group">
@@ -457,7 +474,7 @@
 
             <!-- Fixed Pricing Block -->
             <div class="pricing-preview">
-                <h4>Fiksuota nuomos kainodara</h4>
+                <h4>fiksuota nuomos kainodara</h4>
                 <div class="pricing-row">
                     <span>1 savaitė:</span>
                     <strong>100 €</strong>
@@ -482,17 +499,17 @@
 
         <!-- SECTION 2: ABOUT THE SPACE -->
         <section>
-            <h2>Apie erdvę</h2>
+            <h2>apie erdvę</h2>
             <p>Mūsų pop-up erdvė yra įsikūrusi strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ir išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
             <p>Erdvė sukurta remiantis švaria, šviesia ir minimalistine estetika. Neutralios linijos ir puikus natūralus apšvietimas leidžia lengvai bei greitai transformuoti patalpas pagal jūsų prekių ženklo identitetą, kad jūsų kuriami produktai išliktų pagrindiniu ekspozicijos akcentu.</p>
         </section>
 
         <!-- SECTION 3: HOW IT WORKS -->
         <section>
-            <h2>Kaip veikia „Baltas Miškas“ pop-up?</h2>
+            <h2>kaip veikia „baltas miškas“ pop-up?</h2>
             <p>Siekdami, kad jūsų prekių ženklo pristatymas reikalautų kuo mažiau papildomų organizacinių rūpesčių, mes užtikriname pilną infrastruktūrą ir kasdienį parduotuvės operacijų valdymą:</p>
             <ul class="original-list">
-                <li><strong>Pilnas klientų aptarnavimas:</strong> Viso pop-up laikotarpiu parduotuvėje dirba, klientus konsultuje bei pardavimus vykdo profesionali „Baltas Miškas“ komanda.</li>
+                <li><strong>Pilnas klientų aptarnavimas:</strong> Viso pop-up laikotarpiu parduotuvėje dirba, klientus konsultuoja bei pardavimus vykdo profesionali „Baltas Miškas“ komanda.</li>
                 <li><strong>Prekių ekspozicija:</strong> Jūsų užduotis – tiesiog pristatyti prekes į vietą ir nuspręsti, kaip jos turi būti išeksponuotos. Mes suteikiame visas reikalingas minimalistines kabyklas, bėgius bei ekspozicinius staliukus.</li>
             </ul>
 
@@ -500,15 +517,15 @@
             <div class="equipment-gallery">
                 <div class="gallery-item">
                     <img src="/images/Userfiles/popup_pakaba.png" alt="Minimalistinės drabužių kabyklos">
-                    <div class="gallery-caption">Minimalistinės kabyklos</div>
+                    <div class="gallery-caption">Kabyklos</div>
                 </div>
                 <div class="gallery-item">
                     <img src="/images/Userfiles/popup_lentyna.png" alt="Modulinės ekspozicinės lentynos">
-                    <div class="gallery-caption">Modulinės lentynos</div>
+                    <div class="gallery-caption">Lentynos</div>
                 </div>
                 <div class="gallery-item">
                     <img src="/images/Userfiles/popup_ekspozicinis_stalas.png" alt="Skandinaviško stiliaus ekspozicinis stalas">
-                    <div class="gallery-caption">Ekspozicinis stalas</div>
+                    <div class="gallery-caption">Stalas</div>
                 </div>
             </div>
 
@@ -520,7 +537,7 @@
 
         <!-- SECTION 4: SERVICE TERMS & PAYMENTS -->
         <section id="atsiskaitymas">
-            <h2>Prekių pristatymas ir atsiskaitymas</h2>
+            <h2>prekių pristatymas ir atsiskaitymas</h2>
             <p>Siekdami užtikrinti visiškai skaidrią, partneryste grįstą eigą, vadovaujamės šiomis keliomis taisyklėmis:</p>
             <ul class="original-list">
                 <li><strong>Apyvartos atidavimas:</strong> Netaikome jokių paslėptų mokesčių ar procentų nuo jūsų pardavimų. Pop-up autorius gauna pilną 100% sumą už visas renginio metu parduotas prekes.</li>
@@ -531,7 +548,7 @@
 
         <!-- SECTION 5: MARKETING & PROMOTION -->
         <section>
-            <h2>Viešinimas ir komunikacija</h2>
+            <h2>viešinimas ir komunikacija</h2>
             <p>Pasirinkus nuomos planą su viešinimo paslaugomis (550 €/mėn.), jūsų projektui suteikiame tiesioginę prieigą prie lojalios „Baltas Miškas“ auditorijos:</p>
             <ul class="original-list">
                 <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės.</li>
@@ -543,12 +560,11 @@
         <!-- SECTION 6: FULL APPLICATION FORM -->
         <section id="uzklausa">
             <div class="form-card">
-                <h2>Išsami rezervacijos užklausa</h2>
+                <h2>išsami rezervacijos užklausa</h2>
                 <p class="form-subtitle">Suderinkite jūsų pop-up viziją, koncepciją bei laisvas datas.</p>
                 
-                <!-- Explicit Form Disclaimer -->
                 <div class="form-notice">
-                    <strong>Pastaba:</strong> Jei jau užpildėte trumpąją formą puslapio viršuje, šios formos pildyti <strong>nebūtina</strong>. Užpildykite jį tik tuo atveju, jei tiksliai žinote savo pop-up viziją ir norite paspartinti procesus iškart suteikiant daugiau detalios informacijos.
+                    <strong>Pastaba:</strong> Jei jau užpildėte trumpąją formą puslapio viršuje, šios formos pildyti <strong>nebūtina</strong>. Užpildykite ją tik tuo atveju, jei tiksliai žinote savo pop-up viziją ir norite paspartinti procesus iškart suteikiant daugiau detalios informacijos.
                 </div>
                 
                 <form action="https://tally.so/r/q4aQj5" method="POST">
