@@ -4,629 +4,271 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop-up Erdvės Nuoma — Baltas Miškas</title>
-    
-    <!-- Šiaurietiškos estetikos šriftai: Syne (antraštėms) ir DM Sans (tekstui) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <style>
+        /* NORDIC MINIMALIST DESIGN SYSTEM */
         :root {
-            --color-text: #1a1a1a;
-            --color-text-muted: #555555;
-            --color-text-light: #999999;
-            --color-bg: #ffffff;
-            --color-bg-secondary: #fbfbfb;
-            --color-border: #eeeeee;
-            --color-border-focus: #1a1a1a;
-            --color-accent: #222222; /* Minimalistinė, griežta monochrominė paletė */
-            --color-accent-hover: #000000; 
-            --font-headings: "Syne", sans-serif;
-            --font-body: "DM Sans", sans-serif;
-            --site-max-width: 600px; /* Dar kompaktiškesnis, elegantiškesnis plotis */
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --text-light: #888888;
+            --accent: #a16207; /* Gintarinis/žemiškas akcentas */
+            --border-color: #eaeaea;
+            --bg-light: #fafafa;
+            --max-width: 760px;
         }
 
-        * {
+        *, *::before, *::after {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            background-color: var(--color-bg);
-            line-height: 1.85;
-            -webkit-font-smoothing: antialiased;
-            letter-spacing: -0.01em;
-            padding: 0 24px;
-        }
-
-        .page-wrapper {
-            max-width: var(--site-max-width);
-            margin: 0 auto;
-            padding: 120px 0; /* Maksimali erdvė viršuje ir apačioje */
-        }
-
-        section {
-            margin-bottom: 100px; /* Gilus kvėpavimas tarp sekcijų */
-        }
-
-        h1 {
-            font-family: var(--font-headings);
-            font-size: 2.2rem;
-            font-weight: 500;
-            line-height: 1.2;
-            letter-spacing: -0.03em;
-            margin-bottom: 32px;
-            text-transform: lowercase; /* Konceptualus minimalizmas */
-        }
-
-        h2 {
-            font-family: var(--font-headings);
-            font-size: 1.35rem;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            margin-bottom: 32px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--color-border);
-            text-transform: lowercase;
-        }
-
-        p {
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: var(--color-text-muted);
-            margin-bottom: 28px;
-        }
-
-        .hero {
-            margin-bottom: 80px;
-        }
-
-        .hero p.lead {
-            font-size: 1.1rem;
-            font-weight: 300;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-main);
+            font-size: 11pt;
             line-height: 1.7;
-            color: var(--color-text);
-            margin: 0 0 48px 0;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Minimalist Google Maps Container */
-        .map-container {
+        /* TOP ACCENT LINE */
+        .top-bar {
+            border-top: 4px solid var(--accent);
             width: 100%;
-            height: 240px;
-            margin-bottom: 48px;
-            border: 1px solid var(--color-border);
-            filter: grayscale(1) contrast(1.1); /* Šiaurietiškas griežtas filtras */
-            opacity: 0.7;
-            transition: opacity 0.4s ease;
         }
 
-        .map-container:hover {
-            opacity: 0.9;
+        /* CONTAINER WITH GENEROUS WHITESPACE */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 80px 24px;
         }
 
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Clean Mini-Form */
-        .hero-mini-form {
-            width: 100%; 
-            background-color: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
-            padding: 40px;
-            margin-bottom: 48px;
-        }
-
-        .hero-mini-form .mini-group {
+        /* BADGES & LABELS */
+        .location-badge {
+            display: inline-block;
+            font-size: 8.5pt;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 5px 12px;
             margin-bottom: 24px;
         }
 
-        .hero-mini-form label {
-            display: block;
-            font-size: 0.75rem;
+        /* TYPOGRAPHY */
+        h1 {
+            font-size: 28pt;
+            font-weight: 300;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            margin-top: 0;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        h2 {
+            font-size: 14pt;
             font-weight: 400;
-            margin-bottom: 10px;
+            letter-spacing: 0.06em;
+            margin-top: 56px;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--color-text-light);
+            color: var(--text-main);
         }
 
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--color-accent);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 18px 32px;
-            font-family: var(--font-headings);
-            font-size: 0.9rem;
+        p {
+            color: var(--text-muted);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .lead {
+            font-size: 12.5pt;
+            line-height: 1.75;
+            color: #333333;
+            margin-bottom: 32px;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* LISTS WITH CUSTOM DASH BRACKET */
+        .minimal-list {
+            list-style: none;
+            margin: 0 0 32px 0;
+            padding: 0;
+        }
+
+        .minimal-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
+        .minimal-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
             font-weight: 400;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
         }
 
-        .btn-primary:hover {
-            background-color: var(--color-accent-hover);
+        /* PRICING BLOCK */
+        .pricing-card {
+            margin: 40px 0;
+            padding: 32px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
         }
 
-        /* Pricing Preview */
-        .pricing-preview {
-            width: 100%;
-            font-size: 0.9rem;
-            border-top: 1px dashed var(--color-border);
-            padding-top: 32px;
-            margin-bottom: 48px;
-        }
-
-        .pricing-preview h4 {
-            font-family: var(--font-headings);
-            font-size: 0.75rem;
+        .pricing-card h3 {
+            font-size: 9.5pt;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--color-text-light);
+            letter-spacing: 0.06em;
+            color: var(--text-light);
+            margin-top: 0;
             margin-bottom: 20px;
         }
 
         .pricing-row {
             display: flex;
             justify-content: space-between;
+            align-items: baseline;
             margin-bottom: 12px;
-            color: var(--color-text-muted);
+            color: var(--text-muted);
+        }
+
+        .pricing-label {
             font-weight: 300;
         }
 
-        .pricing-row strong {
-            color: var(--color-text);
-            font-weight: 400;
+        .pricing-value {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 11.5pt;
         }
 
         .pricing-note {
             display: block;
-            font-size: 0.8rem;
-            color: var(--color-text-light);
+            font-size: 10pt;
+            color: var(--text-light);
             margin-top: 20px;
             font-style: italic;
+            line-height: 1.5;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 14px;
+        }
+
+        /* SOCIAL PROOF / BRANDS FOOTER */
+        .brands-footer {
+            margin-top: 40px;
+            font-size: 9pt;
+            color: var(--text-light);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
             line-height: 1.6;
         }
 
-        /* Minimalist Lists */
-        .original-list {
-            list-style: none;
-            margin-bottom: 32px;
-        }
-
-        .original-list li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: var(--color-text-muted);
-        }
-
-        .original-list li strong {
-            color: var(--color-text);
+        .brands-list {
+            color: #444444;
             font-weight: 400;
         }
 
-        .original-list li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--color-text-light);
-        }
-
-        /* Clean Image Gallery Grid */
-        .equipment-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin: 40px 0;
-        }
-
-        .gallery-item {
-            display: flex;
-            flex-direction: column;
-            border: 1px solid var(--color-border);
-            background-color: var(--color-bg-secondary);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            filter: grayscale(1) brightness(0.95); /* Itin rami, monochrominė nuotraukų estetika */
-            transition: filter 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            filter: grayscale(0.2) brightness(1);
-        }
-
-        .gallery-caption {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: var(--color-text-light);
-            padding: 10px;
-            text-align: center;
-            border-top: 1px solid var(--color-border);
-            background: #ffffff;
-        }
-
-        /* Social Proof Custom Section */
-        .social-proof {
-            margin-top: 56px;
-            font-size: 0.72rem;
-            color: var(--color-text-light);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .social-proof-brands {
-            color: var(--color-text-muted);
-            font-weight: 400;
-            margin-left: 6px;
-        }
-
-        /* Form Card */
-        .form-card {
-            background-color: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
-            padding: 56px 48px;
-        }
-
-        .form-card h2 {
-            border-bottom: none;
-            margin-bottom: 8px;
-            padding-bottom: 0;
-        }
-
-        .form-card p.form-subtitle {
-            font-size: 0.9rem;
-            color: var(--color-text-light);
-            margin-bottom: 40px;
-        }
-
-        /* Info Alert Box inside Form Card */
-        .form-notice {
-            font-size: 0.85rem;
-            font-weight: 300;
-            color: var(--color-text-muted);
-            background-color: #ffffff;
-            border-left: 1px solid var(--color-text);
-            padding: 20px;
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-
-        .form-card .form-group {
-            margin-bottom: 28px;
-        }
-
-        .form-card label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 400;
-            margin-bottom: 10px;
-            color: var(--color-text);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px 16px;
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: var(--color-text);
-            border: 1px solid var(--color-border);
-            background-color: #ffffff;
-            border-radius: 0;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--color-border-focus);
-        }
-
-        textarea.form-control {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        .checkbox-stack {
-            display: block;
-            margin-top: 14px;
-        }
-
-        .checkbox-item {
-            display: block;
-            position: relative;
-            padding-left: 32px;
-            margin-bottom: 16px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 300;
-            color: var(--color-text-muted);
-            user-select: none;
-        }
-
-        .checkbox-item input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
-        }
-
-        .checkmark {
-            position: absolute;
-            top: 3px;
-            left: 0;
-            height: 16px;
-            width: 16px;
-            border: 1px solid var(--color-border);
-            background-color: #ffffff;
-        }
-
-        .checkbox-item:hover input ~ .checkmark {
-            border-color: var(--color-text-light);
-        }
-
-        .checkbox-item input:checked ~ .checkmark {
-            background-color: var(--color-accent);
-            border-color: var(--color-accent);
-        }
-
-        .checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
-
-        .checkbox-item input:checked ~ .checkmark:after {
-            display: block;
-        }
-
-        .checkbox-item .checkmark:after {
-            left: 5px;
-            top: 2px;
-            width: 3px;
-            height: 7px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-
+        /* RESPONSIVE DESIGN */
         @media (max-width: 600px) {
-            .page-wrapper {
-                padding: 60px 0;
+            .container {
+                padding: 48px 20px;
             }
             h1 {
-                font-size: 1.8rem;
+                font-size: 22pt;
             }
-            .form-card {
-                padding: 40px 24px;
-            }
-            .hero-mini-form {
-                padding: 24px;
-            }
-            .equipment-gallery {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .gallery-item img {
-                height: 200px;
+            .pricing-card {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-wrapper">
+    <div class="top-bar"></div>
+
+    <div class="container">
         
-        <!-- SECTION 1: HERO & INTERACTIVE HEADER -->
-        <section class="hero">
-            <h1>pop-up erdvės nuoma vilniaus senamiestyje</h1>
-            <p class="lead">Ieškote jaukios, estetiškos ir gyvos vietos savo prekių ženklo pristatymui, kūrybinėms dirbtuvėms ar laikinai parduotuvei? Kviečiame įsikurti „Baltas Miškas“ erdvėje Raugyklos g. 6!</p>
-            
-            <!-- Google Maps Embed Layer -->
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2306.969188094776!2d25.2797686!3d54.674987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd9413bf5408a7%3A0xe67cb560b0e51325!2sRaugyklos%20g.%206%2C%2001140%20Vilnius!5e0!3m2!1slt!2slt!4v1710000000000!5m2!1slt!2slt" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+        <!-- INTRO HERO SECTION -->
+        <div class="location-badge">Vilniaus Senamiestis &bull; Raugyklos g. 6</div>
+        <h1>Pop-up erdvės nuoma Vilniaus senamiestyje</h1>
+        
+        <p class="lead">Ieškote jaukios, estetiškos ir gyvos vietos savo prekių ženklo pristatymui, kūrybinėms dirbtuvėms ar laikinai parduotuvei? Kviečiame įsikurti „Baltas Miškas“ erdvėje, kuri strategiškai pritaikyta išskirtinio dizaino bei autorinės mados pristatymams[cite: 1].</p>
+
+        <!-- PRICING STRUCTURE -->
+        <div class="pricing-card">
+            <h3>Fiksuota nuomos kainodara</h3>
+            <div class="pricing-row">
+                <span class="pricing-label">1 savaitė</span>
+                <span class="pricing-value">100 €</span>
             </div>
-
-            <!-- Quick Mini-Form -->
-            <div class="hero-mini-form">
-                <form action="https://tally.so/r/q4aQj5" method="POST">
-                    <div class="mini-group">
-                        <label for="quick-dates">Norimos pop-up nuomos datos</label>
-                        <input type="text" id="quick-dates" name="duration" class="form-control" placeholder="Pvz.: Birželio 15–21 d." required>
-                    </div>
-                    <div class="mini-group">
-                        <label for="quick-email">Jūsų el. paštas</label>
-                        <input type="email" id="quick-email" name="email" class="form-control" placeholder="vardas@pavyzdys.lt" required>
-                    </div>
-                    <button type="submit" class="btn-primary">Pateikti užklausą</button>
-                </form>
+            <div class="pricing-row">
+                <span class="pricing-label">1 mėnuo (bazinė nuoma)</span>
+                <span class="pricing-value">400 €</span>
             </div>
-
-            <!-- Fixed Pricing Block -->
-            <div class="pricing-preview">
-                <h4>fiksuota nuomos kainodara</h4>
-                <div class="pricing-row">
-                    <span>1 savaitė:</span>
-                    <strong>100 €</strong>
-                </div>
-                <div class="pricing-row">
-                    <span>1 mėnuo (bazinė nuoma):</span>
-                    <strong>400 €</strong>
-                </div>
-                <div class="pricing-row">
-                    <span>1 mėnuo (su viešinimo paslaugomis):</span>
-                    <strong>550 €</strong>
-                </div>
-                <span class="pricing-note">* Jokių papildomų komisinių mokesčių ar procentų nuo apyvartos. Pop-up autorius gauna 100% nuo pardavimų.</span>
+            <div class="pricing-row">
+                <span class="pricing-label">1 mėnuo (su viešinimo paslaugomis)</span>
+                <span class="pricing-value">550 €</span>
             </div>
+            <span class="pricing-note">* Jokių papildomų komisinių mokesčių ar procentų nuo apyvartos. Pop-up autorius gauna 100% nuo pardavimų[cite: 1].</span>
+        </div>
 
-            <!-- Brand List -->
-            <div class="social-proof">
-                <span>Jau vykusių pop-up pavyzdžiai:</span>
-                <span class="social-proof-brands">The Knotty Ones, MUDVII, Doke, FG Atelier, Ducktail, Scale11, House of Intimates, Bagota, Go linen</span>
-            </div>
-        </section>
+        <!-- SOCIAL PROOF -->
+        <div class="brands-footer">
+            <span>Jau vykusių pop-up pavyzdžiai:</span><br>
+            <span class="brands-list">studija_m2, rigidus.wear, tanché, kūnui kūnui, d96_wear, anam mót, formuniform[cite: 1]</span>
+        </div>
 
-        <!-- SECTION 2: ABOUT THE SPACE -->
-        <section>
-            <h2>apie erdvę</h2>
-            <p>Mūsų pop-up erdvė yra įsikūrusi strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ir išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
-            <p>Erdvė sukurta remiantis švaria, šviesia ir minimalistine estetika. Neutralios linijos ir puikus natūralus apšvietimas leidžia lengvai bei greitai transformuoti patalpas pagal jūsų prekių ženklo identitetą, kad jūsų kuriami produktai išliktų pagrindiniu ekspozicijos akcentu.</p>
-        </section>
+        <!-- DETAILS: ABOUT -->
+        <h2>Apie erdvę</h2>
+        <p>Mūsų pop-up erdvė yra įsikūrusi strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6[cite: 1]. Tai gyvas, mados, meno ir išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą[cite: 1].</p>
+        <p>Erdvė sukurta remiantis šviesia ir minimalistine estetika[cite: 1]. Neutralios linijos ir puikus natūralus apšvietimas leidžia lengvai bei greitai transformuoti patalpas pagal jūsų prekių ženklo identitetą, kad jūsų kuriami produktai išliktų pagrindiniu ekspozicijos akcentu[cite: 1].</p>
 
-        <!-- SECTION 3: HOW IT WORKS -->
-        <section>
-            <h2>kaip veikia „baltas miškas“ pop-up?</h2>
-            <p>Siekdami, kad jūsų prekių ženklo pristatymas reikalautų kuo mažiau papildomų organizacinių rūpesčių, mes užtikriname pilną infrastruktūrą ir kasdienį parduotuvės operacijų valdymą:</p>
-            <ul class="original-list">
-                <li><strong>Pilnas klientų aptarnavimas:</strong> Viso pop-up laikotarpiu parduotuvėje dirba, klientus konsultuoja bei pardavimus vykdo profesionali „Baltas Miškas“ komanda.</li>
-                <li><strong>Prekių ekspozicija:</strong> Jūsų užduotis – tiesiog pristatyti prekes į vietą ir nuspręsti, kaip jos turi būti išeksponuotos. Mes suteikiame visas reikalingas minimalistines kabyklas, bėgius bei ekspozicinius staliukus.</li>
-            </ul>
+        <!-- DETAILS: HOW IT WORKS -->
+        <h2>Kaip veikia „Baltas Miškas“ pop-up?</h2>
+        <p>Siekdami, kad jūsų prekių ženklo pristatymas reikalautų kuo mažiau papildomų organizacinių rūpesčių, mes užtikriname pilną infrastruktūrą ir kasdienį parduotuvės operacijų valdymą[cite: 1]:</p>
+        
+        <ul class="minimal-list">
+            <li><strong>Pilnas klientų aptarnavimas:</strong> Viso pop-up laikotarpiu parduotuvėje dirba, klientus konsultuoja bei pardavimus vykdo profesionali „Baltas Miškas“ komanda[cite: 1].</li>
+            <li><strong>Prekių ekspozicija:</strong> Jūsų užduotis – tiesiog pristatyti prekes į vietą ir nuspręsti, kaip jos turi būti išeksponuotos[cite: 1]. Mes suteikiame visas reikalingas minimalistines kabyklas, bėgius bei ekspozicinius staliukus[cite: 1].</li>
+            <li><strong>Pilnas pardavimų valdymas:</strong> Mes prisiimame visą atsakomybę už kasos aparato operacijas, atsiskaitymus kortelėmis ar grynaisiais bei sklandų pirkimo procesą, tad jums nereikia rūpintis jokia technine įranga[cite: 1].</li>
+            <li><strong>Patogi logistika:</strong> Paprastas ir greitas kolekcijos iškrovimas – automobiliu galima trumpam teisėtai sustoti tiesiai prie pat pagrindinių įėjimo durų, kad prekių perdavimas būtų kuo patogesnis[cite: 1].</li>
+        </ul>
 
-            <!-- Minimalist Equipment Photo Gallery -->
-            <div class="equipment-gallery">
-                <div class="gallery-item">
-                    <img src="/images/Userfiles/popup_pakaba.png" alt="Minimalistinės drabužių kabyklos">
-                    <div class="gallery-caption">Kabyklos</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/images/Userfiles/popup_lentyna.png" alt="Modulinės ekspozicinės lentynos">
-                    <div class="gallery-caption">Lentynos</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/images/Userfiles/popup_ekspozicinis_stalas.png" alt="Skandinaviško stiliaus ekspozicinis stalas">
-                    <div class="gallery-caption">Stalas</div>
-                </div>
-            </div>
+        <!-- DETAILS: MARKETING -->
+        <h2>Viešinimas ir komunikacija</h2>
+        <p>Pasirinkus nuomos planą su viešinimo paslaugomis (550 €/mėn.), jūsų projektui suteikiame tiesioginę prieigą prie lojalios „Baltas Miškas“ auditorijos[cite: 1]:</p>
+        
+        <ul class="minimal-list">
+            <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės[cite: 1].</li>
+            <li><strong>Naujienlaiškis:</strong> Informacijos apie jūsų pop-up parduotuvės atsidarymą, išskirtinius produktus ar organizuojamas dirbtuves įtraukimas į kassavaitinį „Baltas Miškas“ naujienlaiškį[cite: 1].</li>
+            <li><strong>Bendruomenė:</strong> Jūsų prekių ženklas bus organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą nuo pat pirmosios dienos[cite: 1].</li>
+        </ul>
 
-            <ul class="original-list" style="margin-top: -16px;">
-                <li><strong>Pilnas pardavimų valdymas:</strong> Mes prisiimame visą atsakomybę už kasos aparato operacijas, atsiskaitymus kortelėmis ar grynaisiais bei sklandų pirkimo procesą, tad jums nereikia rūpintis jokia technine įranga.</li>
-                <li><strong>Patogi logistika:</strong> Paprastas ir greitas kolekcijos iškrovimas – automobiliu galima trumpam teisėtai sustoti tiesiai prie pat pagrindinių įėjimo durų, kad prekių perdavimas būtų kuo patogesnis.</li>
-            </ul>
-        </section>
-
-        <!-- SECTION 4: SERVICE TERMS & PAYMENTS -->
-        <section id="atsiskaitymas">
-            <h2>prekių pristatymas ir atsiskaitymas</h2>
-            <p>Siekdami užtikrinti visiškai skaidrią, partneryste grįstą eigą, vadovaujamės šiomis keliomis taisyklėmis:</p>
-            <ul class="original-list">
-                <li><strong>Apyvartos atidavimas:</strong> Netaikome jokių paslėptų mokesčių ar procentų nuo jūsų pardavimų. Pop-up autorius gauna pilną 100% sumą už visas renginio metu parduotas prekes.</li>
-                <li><strong>Pasiruošimas ir likučiai:</strong> Kolekcijos pristatymo bei išsidėliojimo laikas derinamas iš anksto. Pasibaigus nuomos laikotarpiui, prekių likučiai supakuojami ir atsiimami suderintu laiku, o erdvė paliekama tvarkinga.</li>
-                <li><strong>Atsakomybė:</strong> „Baltas Miškas“ komanda rūpinasi kasdienine tvarka, salės priežiūra ir saugumu darbo valandomis, tačiau už bendrą prekių materialinę atsakomybę (pvz., gamybinius defektus) lieka atsakingas prekių ženklo autorius.</li>
-            </ul>
-        </section>
-
-        <!-- SECTION 5: MARKETING & PROMOTION -->
-        <section>
-            <h2>viešinimas ir komunikacija</h2>
-            <p>Pasirinkus nuomos planą su viešinimo paslaugomis (550 €/mėn.), jūsų projektui suteikiame tiesioginę prieigą prie lojalios „Baltas Miškas“ auditorijos:</p>
-            <ul class="original-list">
-                <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės.</li>
-                <li><strong>Naujienlaiškis:</strong> Informacijos apie jūsų pop-up parduotuvės atsidarymą, išskirtinius produktus ar organizuojamas dirbtuves įtraukimas į kassavaitinį „Baltas Miškas“ naujienlaiškį.</li>
-                <li><strong>Bendruomenė:</strong> Jūsų prekių ženklas bus organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą nuo pat pirmosios dienos.</li>
-            </ul>
-        </section>
-
-        <!-- SECTION 6: FULL APPLICATION FORM -->
-        <section id="uzklausa">
-            <div class="form-card">
-                <h2>išsami rezervacijos užklausa</h2>
-                <p class="form-subtitle">Suderinkite jūsų pop-up viziją, koncepciją bei laisvas datas.</p>
-                
-                <div class="form-notice">
-                    <strong>Pastaba:</strong> Jei jau užpildėte trumpąją formą puslapio viršuje, šios formos pildyti <strong>nebūtina</strong>. Užpildykite ją tik tuo atveju, jei tiksliai žinote savo pop-up viziją ir norite paspartinti procesus iškart suteikiant daugiau detalios informacijos.
-                </div>
-                
-                <form action="https://tally.so/r/q4aQj5" method="POST">
-                    
-                    <div class="form-group">
-                        <label for="brand-name">Prekių ženklo pavadinimas *</label>
-                        <input type="text" id="brand-name" name="brand_name" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="fullname">Vardas, Pavardė *</label>
-                        <input type="text" id="fullname" name="fullname" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email-full">El. pašto adresas *</label>
-                        <input type="email" id="email-full" name="email" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Telefono numeris *</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="website">Svetainė arba Instagram nuoroda *</label>
-                        <input type="url" id="website" name="website" class="form-control" placeholder="https://" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Kokio pobūdžio pop-up planuojate?</label>
-                        <div class="checkbox-stack">
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="type" value="Prekyba"> Naujos kolekcijos pristatymas ir prekyba
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="type" value="Dirbtuves"> Kūrybinės dirbtuvės / Edukacinis renginys
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="type" value="Kita"> Privatus klientų susitikimas / Užsakymų atsiėmimas
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="duration-full">Pageidaujamas laikotarpis ir trukmė *</label>
-                        <input type="text" id="duration-full" name="duration" class="form-control" placeholder="Pvz.: Nuo rugsėjo 1 d., 2 savaitėms" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="comments">Trumpas idėjos pristatymas ar papildomi komentarai</label>
-                        <textarea id="comments" name="comments" class="form-control"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary">Pateikti užklausą</button>
-
-                </form>
-            </div>
-        </section>
+        <!-- DETAILS: LOGISTICS & TERMS -->
+        <h2>Prekių pristatymas ir atsiskaitymas</h2>
+        <p>Siekdami užtikrinti visiškai skaidrią, partneryste grįstą eigą, vadovaujamės šiomis keliomis taisyklėmis[cite: 1]:</p>
+        
+        <ul class="minimal-list">
+            <li><strong>Apyvartos atidavimas:</strong> Netaikome jokių paslėptų mokesčių ar procentų nuo jūsų pardavimų[cite: 1]. Pop-up autorius gauna pilną 100% sumą už visas renginio metu parduotas prekes[cite: 1].</li>
+            <li><strong>Pasiruošimas ir likučiai:</strong> Kolekcijos pristatymo bei išsidėliojimo laikas derinamas iš anksto[cite: 1]. Pasibaigus nuomos laikotarpiui, prekių likučiai supakuojami ir atsiimami suderintu laiku, o erdvė paliekama tvarkinga[cite: 1].</li>
+            <li><strong>Atsakomybė:</strong> „Baltas Miškas“ komanda rūpinasi kasdienine tvarka, salės priežiūra ir saugumu darbo valandomis, tačiau už bendrą prekių materialinę atsakomybę (pvz., gamybinius defektus) lieka atsakingas prekių ženklo autorius[cite: 1].</li>
+        </ul>
 
     </div>
 
