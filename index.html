@@ -76,9 +76,69 @@
         }
 
         /* STRUKTŪRINIAI PARYŠKINIMAI */
-        strong, .original-list li strong, .pricing-row strong {
+        strong, .original-list li strong, .pricing-row strong, .second-3013 .text-container strong {
             font-weight: 600 !important;
             color: #1a1a1a !important;
+        }
+
+        /* INTEGRUOTAS BANERIS (second-3013) */
+        .second-3013 {
+            margin: 32px 0 48px 0 !important;
+            width: 100% !important;
+            display: flex !important;
+            position: relative !important;
+            border: 1px solid #eaeaea !important;
+            background: #ffffff !important;
+        }
+
+        .second-3013 .img-container {
+            width: 100% !important;
+            max-width: 690px !important;
+        }
+
+        .second-3013 .img-container img {
+            width: 100% !important;
+            display: block !important;
+            filter: grayscale(1) contrast(1.05) !important;
+            opacity: 0.85 !important;
+        }
+
+        .second-3013 .text-container {
+            width: 50% !important;
+            position: absolute !important;
+            right: 24px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            background: #ffffff !important;
+            border: 1px solid #eaeaea !important;
+            padding: 32px !important;
+            box-sizing: border-box !important;
+        }
+
+        .second-3013 .text-container h2 {
+            font-size: 1.2rem !important;
+            border-bottom: none !important;
+            margin: 0 0 12px 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .second-3013 .text-container p {
+            color: #555555 !important;
+            font-size: 13px !important;
+            line-height: 1.5 !important;
+            margin-bottom: 12px !important;
+        }
+
+        .second-3013 .text-container .btn2 {
+            display: inline-block !important;
+            color: #a16207 !important;
+            text-decoration: none !important;
+            text-transform: uppercase !important;
+            font-size: 11px !important;
+            letter-spacing: 0.1em !important;
+            border-bottom: 1px solid #a16207 !important;
+            padding-bottom: 2px !important;
+            margin-top: 12px !important;
         }
 
         /* GOOGLE MAPS KONTEINERIS */
@@ -287,7 +347,7 @@
             color: #a16207 !important;
         }
 
-        /* SPECIALUS IŠRYŠKINIMAS SĄRAŠE (NO COMMISSION BANNER) */
+        /* SPECIALUS IŠRYŠKINIMAS SĄRAŠE */
         .original-list li.highlighted-feature {
             background-color: #fafafa !important;
             border-left: 3px solid #a16207 !important;
@@ -424,6 +484,22 @@
         }
 
         /* RESPONSIVE */
+        @media (max-width: 680px) {
+            .second-3013 {
+                flex-wrap: wrap !important;
+                margin-bottom: 24px !important;
+            }
+            .second-3013 .text-container {
+                width: calc(100% - 32px) !important;
+                position: relative !important;
+                right: auto !important;
+                top: auto !important;
+                transform: none !important;
+                margin: -30px 16px 16px 16px !important;
+                padding: 24px !important;
+            }
+        }
+
         @media (max-width: 600px) {
             .page-wrapper {
                 padding: 40px 0 !important;
@@ -444,6 +520,10 @@
             .gallery-item img {
                 height: 150px !important;
             }
+            .second-3013 .text-container p {
+                font-size: 13px !important;
+                line-height: 20px !important;
+            }
         }
     </style>
 </head>
@@ -456,6 +536,19 @@
             <h1>Pop-up erdvės nuoma Vilniaus senamiestyje</h1>
             <p class="lead">Ieškote jaukios, estetiškos ir gyvos vietos savo prekių ženklo pristatymui, kūrybinėms dirbtuvėms ar laikinai parduotuvei? Kviečiame įsikurti „Baltas Miškas“ butike Raugyklos g. 6!</p>
             
+            <!-- INTEGRUOTAS VIZUALUS BANERIS (second-3013) -->
+            <div class="second-3013">
+                <div class="img-container">
+                    <img alt="popup nuoma vilniuje" src="/images/Userfiles/popup_nuoma_zemelapis-2.jpg" />
+                </div>
+                <div class="text-container">
+                    <h2>Pop-up nuoma</h2>
+                    <p>Išsinuomokite Pop-up erdvę Baltas Miškas butike Vilniuje.</p>
+                    <p>The Knotty Ones, Bagota, Scale11 ir kiti jau naudojasi mūsų paslaugomis.</p>
+                    <p><a class="btn2" href="https://www.baltasmiskas.lt/pagrindinis-meniu/apie-mus/pop-up-nuoma"><strong>Daugiau</strong></a></p>
+                </div>
+            </div>
+
             <!-- Google Maps Embed Layer -->
             <div class="map-container">
                 <iframe 
@@ -510,8 +603,8 @@
         <!-- SECTION 2: ABOUT THE SPACE -->
         <section>
             <h2>Apie pop-up erdves</h2>
-            <p>Baltas Miškas butikas kuriame kviečiame įkurti pop-up yra įsikūręs strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ir išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
-            <p>Jauki, šviesa užpildyta butiko erdvė yra sukurta remiantis šviesia ir minimalistine estetika. </p>
+            <p>Baltas Miškas butikas, kuriame kviečiame įkurti pop-up, yra įsikūręs strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ir išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
+            <p>Jauki, šviesa užpildyta butiko erdvė yra sukurta remiantis šviesia ir minimalistine estetika.</p>
         </section>
 
         <!-- SECTION 3: HOW IT WORKS & EQUIPMENT -->
@@ -563,7 +656,7 @@
             <h2>Viešinimas ir komunikacija</h2>
             <p>Pasirinkus nuomos planą su viešinimo paslaugomis (550 €/mėn.), jūsų pop-up projektui suteikiame tiesioginę prieigą prie lojalios „Baltas Miškas“ auditorijos:</p>
             <ul class="original-list">
-                <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės.</li>
+                <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos i Baltijos šalių dizainą vertinantys žmonės.</li>
                 <li><strong>Naujienlaiškis:</strong> Informacijos apie jūsų pop-up parduotuvės atsidarymą, išskirtinius produktus ar organizuojamas dirbtuves įtraukimas į kassavaitinį „Baltas Miškas“ naujienlaiškį.</li>
                 <li><strong>Bendruomenė:</strong> Jūsų prekių ženklas bus organiškai pristatytas kaip mūsų bendruomenės dalis, padedant pritraukti tikslinį lankytojų srautą.</li>
             </ul>
