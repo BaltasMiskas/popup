@@ -6,23 +6,23 @@
     <title>Pop-up Erdvės Nuoma — Baltas Miškas</title>
     
     <style type="text/css">
-        html {
-            scroll-behavior: smooth;
-            overflow-y: auto !important;
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background-color: #ffffff !important;
+            -webkit-font-smoothing: antialiased;
+            overflow: visible !important;
         }
 
         body {
-            margin: 0;
-            padding: 0 24px;
-            background-color: #ffffff;
-            -webkit-font-smoothing: antialiased;
+            padding: 0 20px !important;
         }
 
         .page-wrapper {
             width: 100% !important;
             max-width: 640px !important;
             margin: 0 auto !important;
-            padding: 60px 0 120px 0 !important;
+            padding: 40px 0 60px 0 !important;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
             color: #1a1a1a;
             box-sizing: border-box !important;
@@ -34,27 +34,27 @@
         }
 
         section {
-            margin-bottom: 80px !important;
+            margin-bottom: 50px !important;
             display: block !important;
             clear: both !important;
         }
 
         h1 {
-            font-size: 2.2rem !important;
+            font-size: 2rem !important;
             font-weight: 300 !important;
             line-height: 1.3 !important;
             letter-spacing: -0.01em !important;
-            margin-bottom: 24px !important;
+            margin-bottom: 20px !important;
             text-align: left !important;
             color: #1a1a1a !important;
         }
 
         h2 {
-            font-size: 1.4rem !important;
+            font-size: 1.3rem !important;
             font-weight: 400 !important;
             letter-spacing: 0.03em !important;
-            margin-bottom: 28px !important;
-            padding-bottom: 12px !important;
+            margin-bottom: 20px !important;
+            padding-bottom: 10px !important;
             border-bottom: 1px solid #eaeaea !important;
             text-align: left !important;
             text-transform: uppercase !important;
@@ -64,16 +64,16 @@
         p {
             font-size: 14px !important;
             color: #555555 !important;
-            line-height: 1.65 !important;
-            margin-bottom: 24px !important;
+            line-height: 1.6 !important;
+            margin-bottom: 18px !important;
             text-align: left !important;
         }
 
         .hero p.lead {
             font-size: 15px !important;
-            line-height: 1.7 !important;
+            line-height: 1.65 !important;
             color: #444444 !important;
-            margin: 0 0 24px 0 !important;
+            margin: 0 0 20px 0 !important;
         }
 
         strong, .original-list li strong, .pricing-row strong {
@@ -83,10 +83,9 @@
 
         .hero-image-link {
             display: block !important;
-            margin: 32px 0 40px 0 !important;
+            margin: 24px 0 !important;
             width: 100% !important;
             border: 1px solid #eaeaea !important;
-            overflow: hidden !important;
         }
 
         .hero-image-link img {
@@ -97,8 +96,8 @@
 
         .map-container {
             width: 100% !important;
-            height: 280px !important;
-            margin-bottom: 40px !important;
+            height: 260px !important;
+            margin-bottom: 30px !important;
             border: 1px solid #eaeaea !important;
         }
 
@@ -113,100 +112,79 @@
             background-color: #fcfbf7 !important; 
             border: 1px solid #eadecc !important; 
             border-left: 4px solid #a16207 !important; 
-            padding: 32px !important;
-            margin-bottom: 40px !important;
+            padding: 24px !important;
+            margin-bottom: 30px !important;
         }
 
         .hero-mini-form h3 {
-            font-size: 15px !important;
+            font-size: 14px !important;
             font-weight: 500 !important;
             text-transform: uppercase !important;
             letter-spacing: 0.05em !important;
             color: #1a1a1a !important;
-            margin: 0 0 20px 0 !important;
-            text-align: left !important;
+            margin: 0 0 16px 0 !important;
         }
 
         .form-card {
             width: 100% !important; 
-            padding: 48px !important;
+            padding: 32px !important;
             background-color: #f9f9f9 !important;
             border: 1px solid #eaeaea !important; 
-            margin-bottom: 40px !important;
+            margin-bottom: 30px !important;
         }
 
         .form-card h2 {
             border-bottom: none !important;
-            margin-bottom: 6px !important;
+            margin-bottom: 4px !important;
             padding-bottom: 0 !important;
         }
 
         .form-card p.form-subtitle {
             font-size: 14px !important;
             color: #555555 !important;
-            margin-bottom: 32px !important;
+            margin-bottom: 24px !important;
         }
 
         .mini-group, .form-group {
-            margin-bottom: 20px !important;
+            margin-bottom: 16px !important;
             width: 100% !important;
-        }
-
-        .form-group {
-            margin-bottom: 24px !important;
         }
 
         label {
             display: block !important;
-            font-size: 12px !important;
+            font-size: 11px !important;
             font-weight: 400 !important;
-            margin-bottom: 8px !important;
+            margin-bottom: 6px !important;
             text-transform: uppercase !important;
             letter-spacing: 0.05em !important;
             color: #444444 !important;
-            text-align: left !important;
-        }
-
-        .form-group label {
-            color: #1a1a1a !important;
         }
 
         .form-control {
             box-sizing: border-box !important;
-            height: 48px !important; 
+            height: 44px !important; 
             width: 100% !important;
             margin: 0 !important;
             outline: none !important;
             border-radius: 4px !important;
-            -webkit-appearance: none !important;
-            padding: 0 15px !important;
+            padding: 0 12px !important;
             background: #ffffff !important;
             border: 1px solid #dcdcdc !important;
             font-size: 14px !important;
             color: #333333 !important;
-            text-align: left !important; 
-            transition: border-color 0.2s ease !important;
         }
 
         textarea.form-control {
             height: auto !important;
-            min-height: 120px !important;
-            padding: 15px !important;
+            min-height: 100px !important;
+            padding: 12px !important;
             resize: vertical !important;
         }
 
-        .form-control:focus {
-            border-color: #a16207 !important;
-        }
-
         .btn-primary {
-            box-sizing: border-box !important;
-            height: 48px !important; 
+            height: 44px !important; 
             width: 100% !important;
-            margin: 0 !important;
-            outline: none !important;
             border-radius: 4px !important;
-            -webkit-appearance: none !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
@@ -215,26 +193,18 @@
             text-transform: uppercase !important;
             letter-spacing: 0.1em !important;
             cursor: pointer !important;
-            padding: 0 15px !important;
-            transition: all 0.2s ease !important;
+            border: none !important;
         }
 
         .hero-mini-form .btn-primary {
             background: #a16207 !important;
             color: #ffffff !important;
-            border: 1px solid #a16207 !important;
-        }
-
-        .hero-mini-form .btn-primary:hover {
-            background: #854d0e !important;
-            border-color: #854d0e !important;
         }
 
         .form-card .btn-primary {
             background: transparent !important;
             color: #a16207 !important;
             border: 1px solid #a16207 !important;
-            justify-content: flex-start !important;
         }
 
         .form-card .btn-primary:hover {
@@ -243,17 +213,9 @@
         }
 
         .text-link {
-            display: inline-block !important;
             color: #a16207 !important;
             text-decoration: none !important;
             border-bottom: 1px solid #a16207 !important;
-            padding-bottom: 1px !important;
-            font-weight: 400 !important;
-            transition: opacity 0.2s ease !important;
-        }
-
-        .text-link:hover {
-            opacity: 0.8 !important;
         }
 
         .form-notice {
@@ -261,44 +223,36 @@
             color: #555555 !important;
             background-color: #ffffff !important;
             border-left: 2px solid #a16207 !important;
-            padding: 16px !important;
-            margin-bottom: 32px !important;
-            line-height: 1.6 !important;
-            border-top: 1px solid #eaeaea !important;
-            border-right: 1px solid #eaeaea !important;
-            border-bottom: 1px solid #eaeaea !important;
+            padding: 12px !important;
+            margin-bottom: 24px !important;
+            border: 1px solid #eaeaea !important;
+            border-left: 2px solid #a16207 !important;
         }
 
         .pricing-preview {
             width: 100% !important;
             font-size: 14px !important;
             border-top: 1px dashed #eaeaea !important;
-            padding-top: 24px !important;
-            margin-bottom: 40px !important;
+            padding-top: 20px !important;
         }
 
         .pricing-preview h4 {
-            font-size: 12px !important;
+            font-size: 11px !important;
             font-weight: 400 !important;
             text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
             color: #888888 !important;
-            margin-bottom: 12px !important;
+            margin-bottom: 10px !important;
         }
 
         .pricing-row {
             display: flex !important;
             justify-content: space-between !important;
-            margin-bottom: 8px !important;
-            color: #555555 !important;
+            margin-bottom: 6px !important;
         }
 
         .pricing-note {
             display: block !important;
-            font-size: 14px !important;
-            color: #1a1a1a !important;
-            margin-top: 16px !important;
-            line-height: 1.6 !important;
+            margin-top: 12px !important;
         }
         
         .pricing-note .highlight {
@@ -308,17 +262,17 @@
 
         .original-list {
             list-style: none !important;
-            margin-bottom: 32px !important;
+            margin-bottom: 24px !important;
             padding: 0 !important;
         }
 
         .original-list li {
             position: relative !important;
-            padding-left: 24px !important;
-            margin-bottom: 16px !important;
+            padding-left: 20px !important;
+            margin-bottom: 12px !important;
             color: #555555 !important;
             font-size: 14px !important;
-            line-height: 1.65 !important;
+            line-height: 1.6 !important;
         }
 
         .original-list li::before {
@@ -331,20 +285,16 @@
         .original-list li.highlighted-feature {
             background-color: #fafafa !important;
             border-left: 3px solid #a16207 !important;
-            padding: 16px 16px 16px 24px !important;
-            margin: 24px 0 !important;
-        }
-        
-        .original-list li.highlighted-feature::before {
-            left: 8px !important;
-            top: 16px !important;
+            padding: 12px 12px 12px 20px !important;
+            margin: 16px 0 !important;
         }
 
         .three-column-gallery {
             display: grid !important;
             grid-template-columns: repeat(3, 1fr) !important;
-            gap: 16px !important;
-            margin: 32px 0 !important;
+            gap: 12px !important;
+            margin: 24px 0 !important;
+            width: 100% !important;
         }
 
         .gallery-item {
@@ -352,11 +302,12 @@
             flex-direction: column !important;
             border: 1px solid #eaeaea !important;
             background: #ffffff !important;
+            overflow: hidden !important;
         }
 
         .gallery-item img {
             width: 100% !important;
-            height: 160px !important;
+            height: 130px !important;
             object-fit: cover !important;
             display: block !important;
         }
@@ -364,54 +315,42 @@
         .gallery-caption {
             font-size: 11px !important;
             text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
             color: #666666 !important;
-            padding: 10px !important;
+            padding: 8px !important;
             text-align: center !important;
             border-top: 1px solid #eaeaea !important;
-            line-height: 1.4 !important;
         }
 
         .social-proof {
-            margin: 16px 0 24px 0 !important;
+            margin: 12px 0 20px 0 !important;
             font-size: 12px !important;
             color: #888888 !important;
-            letter-spacing: 0.05em !important;
             text-transform: uppercase !important;
-            text-align: left !important;
-            line-height: 1.5 !important;
         }
 
         .social-proof-brands {
             color: #444444 !important;
-            font-weight: 400 !important;
-            margin-left: 4px !important;
             text-transform: none !important;
-            letter-spacing: normal !important;
         }
 
         .checkbox-stack {
             display: block !important;
-            margin-top: 10px !important;
+            margin-top: 8px !important;
         }
 
         .checkbox-item {
             display: block !important;
             position: relative !important;
-            padding-left: 28px !important;
-            margin-bottom: 12px !important;
+            padding-left: 24px !important;
+            margin-bottom: 10px !important;
             cursor: pointer !important;
             font-size: 14px !important;
             color: #555555 !important;
-            user-select: none !important;
-            text-transform: none !important;
-            letter-spacing: normal !important;
         }
 
         .checkbox-item input {
             position: absolute !important;
             opacity: 0 !important;
-            cursor: pointer !important;
             height: 0 !important;
             width: 0 !important;
         }
@@ -420,15 +359,10 @@
             position: absolute !important;
             top: 2px !important;
             left: 0 !important;
-            height: 18px !important;
-            width: 18px !important;
+            height: 16px !important;
+            width: 16px !important;
             border: 1px solid #dcdcdc !important;
             background-color: #ffffff !important;
-            border-radius: 2px !important;
-        }
-
-        .checkbox-item:hover input ~ .checkmark {
-            border-color: #888888 !important;
         }
 
         .checkbox-item input:checked ~ .checkmark {
@@ -447,10 +381,10 @@
         }
 
         .checkbox-item .checkmark:after {
-            left: 6px !important;
-            top: 2px !important;
+            left: 5px !important;
+            top: 1px !important;
             width: 4px !important;
-            height: 9px !important;
+            height: 8px !important;
             border: solid white !important;
             border-width: 0 2px 2px 0 !important;
             transform: rotate(45deg) !important;
@@ -458,34 +392,22 @@
 
         .submit-message {
             display: none;
-            padding: 16px;
+            padding: 12px;
             background-color: #f0fdf4;
             border: 1px solid #bbf7d0;
             color: #166534;
             border-radius: 4px;
             font-size: 14px;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         @media (max-width: 600px) {
-            .page-wrapper {
-                padding: 40px 0 100px 0 !important;
-            }
-            h1 {
-                font-size: 1.8rem !important;
-            }
-            .form-card {
-                padding: 28px 20px !important;
-            }
-            .hero-mini-form {
-                padding: 24px 20px !important;
-            }
             .three-column-gallery {
                 grid-template-columns: 1fr !important;
                 gap: 12px !important;
             }
             .gallery-item img {
-                height: 220px !important;
+                height: 180px !important;
             }
         }
     </style>
@@ -558,19 +480,19 @@
             <p>Baltas Miškas butikas, kuriame kviečiame įkurti pop-up, yra įsikūręs strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ištikimų gerbėjų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
             <p>Jauki, šviesa užpildyta butiko erdvė yra sukurta remiantis šviesia ir minimalistine estetika.</p>
 
-            <div style="margin-top: 40px;">
-                <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: #888888; margin-bottom: 16px;">Galimi pop-up variantai:</p>
+            <div style="margin-top: 30px;">
+                <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: #888888; margin-bottom: 12px;">Galimi pop-up variantai:</p>
                 <div class="three-column-gallery">
                     <div class="gallery-item">
-                        <img src="https://www.baltasmiskas.lt/images/Userfiles/popup_variantas1.jpg" alt="Renginio variantas">
+                        <img src="https://www.baltasmiskas.lt/images/Userfiles/popup_variantas1.jpg" alt="Kolekcijos pristatymas">
                         <div class="gallery-caption">Kolekcijos pristatymas</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://www.baltasmiskas.lt/images/Userfiles/popup_variantas2.jpg" alt="Kūrybinių dirbtuvių variantas">
+                        <img src="https://www.baltasmiskas.lt/images/Userfiles/popup_variantas2.jpg" alt="Kūrybinės dirbtuvės">
                         <div class="gallery-caption">Kūrybinės dirbtuvės</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://www.baltasmiskas.lt/images/Userfiles/popup_variantas3.jpg" alt="Laikinos parduotuvės variantas">
+                        <img src="https://www.baltasmiskas.lt/images/Userfiles/popup_variantas3.jpg" alt="Laikina parduotuvė">
                         <div class="gallery-caption">Laikina parduotuvė</div>
                     </div>
                 </div>
@@ -581,7 +503,7 @@
             <h2>Kaip veikia „Baltas Miškas“ pop-up?</h2>
             <p>Siekdami, kad jūsų prekių ženklo pristatymas reikalautų kuo mažiau papildomų organizacinių rūpesčių, mes suteikiame pilną aptarnavimą:</p>
             <ul class="original-list">
-                <li><strong>Pilnas klientų aptarnavimas:</strong> Viso pop-up laikotarpiu parduotuvėje dirba, klientus konsultuoja bei pardavimus vykdo profesionali „Baltas Miškas“ komanda.</li>
+                <li><strong>Pilnas klientų aptarnavimas:</strong> Viso pop-up laikotarpiu parduotuvėje dirba, klientus konsultuoja bei pardavimus vylido profesionali „Baltas Miškas“ komanda.</li>
                 <li><strong>Prekių ekspozicija:</strong> Jūsų užduotis – tiesiog pristatyti prekes į vietą ir nuspręsti, kaip jos turi būti išeksponuotos. Mes suteikiame reikalingas kabyklas, lentynas ar ekspozicinius stalus.</li>
             </ul>
 
@@ -613,7 +535,7 @@
                 <li class="highlighted-feature">
                     <strong>Nulinis komisinis mokestis:</strong> Mes netaikome jokių papildomų mokesčių ar procentų nuo jūsų apyvartos. Pop-up įkūręs prekių ženklas gauna pilną <strong>100% sumą</strong> už visas pop-up metu parduotas prekes.
                 </li>
-                <li><strong>Pasiruošimas ir likučiai:</strong> Kolekcijos pristatymo bei išsidėliojimo laikas derinamas iš anksto. Pasibaigus nuomos laikotarpiui, prekių likučiai supakuojami ir atsiimami suderintu laiku.</li>
+                <li><strong>Pasiruošimas ir likučiai:</strong> Kolekcijos pristatymo bei išsidėliojimo laikas derinamas iš antersto. Pasibaigus nuomos laikotarpiui, prekių likučiai supakuojami ir atsiimami suderintu laiku.</li>
                 <li><strong>Atsakomybė:</strong> „Baltas Miškas“ rūpinasi kasdienine tvarka, salės priežiūra ir saugumu darbo valandomis, tačiau už bendrą prekių materialinę atsakomybę lieka atsakingas prekių ženklo autorius.</li>
             </ul>
         </section>
@@ -627,7 +549,7 @@
                 <li><strong>Bendruomenė:</strong> Jūsų prekių ženklas bus organiškai pristatytas kaip mūsų bendruomenės dalis.</li>
             </ul>
 
-            <p style="margin-top: 32px; font-size: 14px; color: #555555;">
+            <p style="margin-top: 24px; font-size: 14px; color: #555555;">
                 Įkvėpimui kviečiame skaityti mūsų bendruomenės pop-up <a href="https://www.baltasmiskas.lt/pagrindinis-meniu/apie-mus/pop-up-sekmes-istorija" class="text-link">sėkmės istoriją čia</a>.
             </p>
         </section>
