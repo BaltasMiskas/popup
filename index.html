@@ -6,7 +6,6 @@
     <title>Pop-up Erdvės Nuoma — Baltas Miškas</title>
     
     <style type="text/css">
-        /* BAZINĖ KONTROLĖ IR ŠRIFTAI (Griežtas Baltas Miškas identitetas) */
         html {
             scroll-behavior: smooth;
         }
@@ -22,7 +21,7 @@
             width: 100% !important;
             max-width: 640px !important;
             margin: 0 auto !important;
-            padding: 90px 0 120px 0 !important; /* Pridėtas saugus tarpas apačioje, kad turinys nebūtų nukirstas */
+            padding: 90px 0 120px 0 !important;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
             color: #1a1a1a;
             box-sizing: border-box !important;
@@ -39,7 +38,6 @@
             clear: both !important;
         }
 
-        /* ANTRAŠTĖS IR TEKSTAS */
         h1 {
             font-size: 2.2rem !important;
             font-weight: 300 !important;
@@ -77,13 +75,11 @@
             margin: 0 0 24px 0 !important;
         }
 
-        /* STRUKTŪRINIAI PARYŠKINIMAI */
         strong, .original-list li strong, .pricing-row strong {
             font-weight: 600 !important;
             color: #1a1a1a !important;
         }
 
-        /* ŠVARI HERO ILIUSTRACIJA */
         .hero-image-link {
             display: block !important;
             margin: 32px 0 40px 0 !important;
@@ -110,7 +106,6 @@
             opacity: 1 !important;
         }
 
-        /* GOOGLE MAPS KONTEINERIS */
         .map-container {
             width: 100% !important;
             height: 280px !important;
@@ -132,7 +127,6 @@
             border: 0 !important;
         }
 
-        /* AKTYVESNĖ TRUMPOJI FORMA (CTA DIZAINAS) */
         .hero-mini-form {
             width: 100% !important; 
             background-color: #fcfbf7 !important; 
@@ -152,7 +146,6 @@
             text-align: left !important;
         }
 
-        /* FORMŲ KONTEINERIAI (ILGOJI FORMA) */
         .form-card {
             width: 100% !important; 
             padding: 48px !important;
@@ -173,7 +166,6 @@
             margin-bottom: 32px !important;
         }
 
-        /* FORMOS ELEMENTAI */
         .mini-group, .form-group {
             margin-bottom: 20px !important;
             width: 100% !important;
@@ -198,7 +190,6 @@
             color: #1a1a1a !important;
         }
 
-        /* ĮVESTIES LAUKELIAI */
         .form-control {
             box-sizing: border-box !important;
             height: 48px !important; 
@@ -227,7 +218,6 @@
             border-color: #a16207 !important;
         }
 
-        /* BAZINIS MYGTUKAS */
         .btn-primary {
             box-sizing: border-box !important;
             height: 48px !important; 
@@ -248,7 +238,6 @@
             transition: all 0.2s ease !important;
         }
 
-        /* TRUMPOSIOS FORMA CTA MYGTUKAS */
         .hero-mini-form .btn-primary {
             background: #a16207 !important;
             color: #ffffff !important;
@@ -260,7 +249,6 @@
             border-color: #854d0e !important;
         }
 
-        /* ILGOSIOS FORMA MYGTUKAS */
         .form-card .btn-primary {
             background: transparent !important;
             color: #a16207 !important;
@@ -273,7 +261,6 @@
             color: #ffffff !important;
         }
 
-        /* TEKSTINĖS NUORODOS STILIUS */
         .text-link {
             display: inline-block !important;
             color: #a16207 !important;
@@ -288,7 +275,6 @@
             opacity: 0.8 !important;
         }
 
-        /* PRANEŠIMO ERDVĖ */
         .form-notice {
             font-size: 13px !important;
             color: #555555 !important;
@@ -302,7 +288,6 @@
             border-bottom: 1px solid #eaeaea !important;
         }
 
-        /* KAINODAROS BLOKAS */
         .pricing-preview {
             width: 100% !important;
             font-size: 14px !important;
@@ -340,7 +325,6 @@
             font-weight: 600 !important;
         }
 
-        /* SĄRAŠAI SU AKCENTINIU BRŪKŠNIU */
         .original-list {
             list-style: none !important;
             margin-bottom: 32px !important;
@@ -363,7 +347,6 @@
             color: #a16207 !important;
         }
 
-        /* SPECIALUS IŠRYŠKINIMAS SĄRAŠE */
         .original-list li.highlighted-feature {
             background-color: #fafafa !important;
             border-left: 3px solid #a16207 !important;
@@ -376,7 +359,6 @@
             top: 16px !important;
         }
 
-        /* TRIJŲ ILIUSTRACIJŲ GALERIJŲ BAZINIS TINKLELIS */
         .three-column-gallery {
             display: grid !important;
             grid-template-columns: repeat(3, 1fr) !important;
@@ -416,7 +398,6 @@
             line-height: 1.4 !important;
         }
 
-        /* SOCIAL PROOF SEKCIJA (VIRŠUJE) */
         .social-proof {
             margin: 16px 0 24px 0 !important;
             font-size: 12px !important;
@@ -435,7 +416,6 @@
             letter-spacing: normal !important;
         }
 
-        /* MODERNIOS VARNELĖS (CHECKBOX) */
         .checkbox-stack {
             display: block !important;
             margin-top: 10px !important;
@@ -502,7 +482,6 @@
             transform: rotate(45deg) !important;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 600px) {
             .page-wrapper {
                 padding: 40px 0 100px 0 !important;
@@ -530,23 +509,19 @@
 
     <div class="page-wrapper">
         
-        <!-- SECTION 1: HERO & INTERACTIVE HEADER -->
         <section class="hero">
             <h1>Pop-up erdvės nuoma Vilniaus senamiestyje</h1>
             <p class="lead">Ieškote jaukios, estetiškos ir gyvos vietos savo prekių ženklo pristatymui, kūrybinėms dirbtuvėms ar laikinai parduotuvei? Kviečiame įsikurti „Baltas Miškas“ butike Raugyklos g. 6!</p>
             
-            <!-- SOCIAL PROOF SĄRAŠAS (VIRŠUJE) -->
             <div class="social-proof">
                 <span>Prekių ženklai, kurie jau kūrė pop-up pas mus:</span>
                 <span class="social-proof-brands">The Knotty Ones, MUDVII, Doke, FG Atelier, Ducktail, Scale11, House of Intimates, Bagota, Go linen.</span>
             </div>
 
-            <!-- ŠVARI HERO ILIUSTRACIJA (TIESIOGINĖ VEIKIANTI NUORODA) -->
             <a href="https://www.baltasmiskas.lt/pagrindinis-meniu/apie-mus/pop-up-nuoma" class="hero-image-link">
                 <img alt="popup nuoma vilniuje" src="https://www.baltasmiskas.lt/images/Userfiles/popup_nuoma_zemelapis-2.jpg" />
             </a>
 
-            <!-- Google Maps Embed Layer -->
             <div class="map-container">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2306.969188094776!2d25.2797686!3d54.674987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd9413bf5408a7%3A0xe67cb560b0e51325!2sRaugyklos%20g.%206%2C%2001140%20Vilnius!5e0!3m2!1slt!2slt!4v1710000000000!5m2!1slt!2slt" 
@@ -556,7 +531,6 @@
                 </iframe>
             </div>
 
-            <!-- TRUMPA UŽKLAUSOS FORMA -->
             <div class="hero-mini-form">
                 <h3>Greita laisvų datų rezervacija</h3>
                 <form action="https://tally.so/r/q4aQj5" method="POST">
@@ -572,7 +546,6 @@
                 </form>
             </div>
 
-            <!-- Fixed Pricing Block -->
             <div class="pricing-preview">
                 <h4>Fiksuota nuomos kainodara</h4>
                 <div class="pricing-row">
@@ -588,18 +561,16 @@
                     <strong>550 € plius PVM</strong>
                 </div>
                 <span class="pricing-note">
-                    <span class="highlight">Jokių papildomų komisinių mokesčių</span> ar procentų nuo apyvartos. Prekės ženklas gauna pilną <span class="highlight">100% sumą</span> nuo visų pardavimų.
+                    <span class="highlight">Jokių papildomų komisinių mokesčių</span> ar procentų nuo apyvartos. Prekės ženklas gauna pilną <span class="highlight">100% sumą</span> nuo visų paradoxų.
                 </span>
             </div>
         </section>
 
-        <!-- SECTION 2: ABOUT THE SPACE -->
         <section>
             <h2>Apie pop-up erdves</h2>
             <p>Baltas Miškas butikas, kuriame kviečiame įkurti pop-up, yra įsikūręs strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ištikimų gerbėjų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
             <p>Jauki, šviesa užpildyta butiko erdvė yra sukurta remiantis šviesia ir minimalistine estetika.</p>
 
-            <!-- SKILTIS: POP-UP VARIANTAI (TIESIOGINĖS NUORODOS) -->
             <div style="margin-top: 40px;">
                 <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: #888888; margin-bottom: 16px;">Galimi pop-up variantai:</p>
                 <div class="three-column-gallery">
@@ -619,7 +590,6 @@
             </div>
         </section>
 
-        <!-- SECTION 3: HOW IT WORKS & EQUIPMENT -->
         <section>
             <h2>Kaip veikia „Baltas Miškas“ pop-up?</h2>
             <p>Siekdami, kad jūsų prekių ženklo pristatymas reikalautų kuo mažiau papildomų organizacinių rūpesčių, mes suteikiame pilną aptarnavimą:</p>
@@ -628,7 +598,6 @@
                 <li><strong>Prekių ekspozicija:</strong> Jūsų užduotis – tiesiog pristatyti prekes į vietą ir nuspręsti, kaip jos turi būti išeksponuotos. Mes suteikiame reikalingas kabyklas, lentynas ar ekspozicinius stalus.</li>
             </ul>
 
-            <!-- ĮRANGOS GALERIJA (TIESIOGINĖS NUORODOS) -->
             <div class="three-column-gallery">
                 <div class="gallery-item">
                     <img src="https://www.baltasmiskas.lt/images/Userfiles/popup_pakaba.png" alt="Kabyklos">
@@ -650,7 +619,6 @@
             </ul>
         </section>
 
-        <!-- SECTION 4: SERVICE TERMS & PAYMENTS -->
         <section id="atsiskaitymas">
             <h2>Prekių pristatymas ir atsiskaitymas</h2>
             <p>Siekdami užtikrinti skaidrią, partneryste grįstą eigą, vadovaujamės šiomis keliomis taisyklėmis:</p>
@@ -659,11 +627,10 @@
                     <strong>Nulinis komisinis mokestis:</strong> Mes netaikome jokių papildomų mokesčių ar procentų nuo jūsų apyvartos. Pop-up įkūręs prekių ženklas gauna pilną <strong>100% sumą</strong> už visas pop-up metu parduotas prekes.
                 </li>
                 <li><strong>Pasiruošimas ir likučiai:</strong> Kolekcijos pristatymo bei išsidėliojimo laikas derinamas iš anksto. Pasibaigus nuomos laikotarpiui, prekių likučiai supakuojami ir atsiimami suderintu laiku.</li>
-                <li><strong>Atsakomybę:</strong> „Baltas Miškas“ rūpinasi kasdienine tvarka, salės priežiūra ir saugumu darbo valandomis, tačiau už bendrą prekių materialinę atsakomybę lieka atsakingas prekių ženklo autorius.</li>
+                <li><strong>Atsakomybė:</strong> „Baltas Miškas“ rūpinasi kasdienine tvarka, salės priežiūra ir saugumu darbo valandomis, tačiau už bendrą prekių materialinę atsakomybę lieka atsakingas prekių ženklo autorius.</li>
             </ul>
         </section>
 
-        <!-- SECTION 5: MARKETING & PROMOTION -->
         <section>
             <h2>Viešinimas ir komunikacija</h2>
             <p>Pasirinkus nuomos planą su viešinimo paslaugomis (550 €/mėn.), jūsų pop-up projektui suteikiame tiesioginę prieigą prie lojalios „Baltas Miškas“ auditorijos:</p>
@@ -678,7 +645,6 @@
             </p>
         </section>
 
-        <!-- SECTION 6: FULL APPLICATION FORM -->
         <section id="uzklausa">
             <div class="form-card">
                 <h2>Išsami rezervacijos užklausa</h2>
