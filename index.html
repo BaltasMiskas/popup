@@ -72,73 +72,40 @@
             font-size: 15px !important;
             line-height: 1.7 !important;
             color: #444444 !important;
-            margin: 0 0 40px 0 !important;
+            margin: 0 0 24px 0 !important;
         }
 
         /* STRUKTŪRINIAI PARYŠKINIMAI */
-        strong, .original-list li strong, .pricing-row strong, .second-3013 .text-container strong {
+        strong, .original-list li strong, .pricing-row strong {
             font-weight: 600 !important;
             color: #1a1a1a !important;
         }
 
-        /* INTEGRUOTAS BANERIS (second-3013) */
-        .second-3013 {
-            margin: 32px 0 48px 0 !important;
+        /* ŠVARI HERO ILIUSTRACIJA (BE TEKSTO BLOKO) */
+        .hero-image-link {
+            display: block !important;
+            margin: 32px 0 40px 0 !important;
             width: 100% !important;
-            display: flex !important;
-            position: relative !important;
             border: 1px solid #eaeaea !important;
-            background: #ffffff !important;
+            overflow: hidden !important;
+            transition: border-color 0.3s ease !important;
         }
 
-        .second-3013 .img-container {
-            width: 100% !important;
-            max-width: 690px !important;
+        .hero-image-link:hover {
+            border-color: #a16207 !important;
         }
 
-        .second-3013 .img-container img {
+        .hero-image-link img {
             width: 100% !important;
             display: block !important;
             filter: grayscale(1) contrast(1.05) !important;
             opacity: 0.85 !important;
+            transition: all 0.3s ease !important;
         }
 
-        .second-3013 .text-container {
-            width: 50% !important;
-            position: absolute !important;
-            right: 24px !important;
-            top: 50% !important;
-            transform: translateY(-50%) !important;
-            background: #ffffff !important;
-            border: 1px solid #eaeaea !important;
-            padding: 32px !important;
-            box-sizing: border-box !important;
-        }
-
-        .second-3013 .text-container h2 {
-            font-size: 1.2rem !important;
-            border-bottom: none !important;
-            margin: 0 0 12px 0 !important;
-            padding-bottom: 0 !important;
-        }
-
-        .second-3013 .text-container p {
-            color: #555555 !important;
-            font-size: 13px !important;
-            line-height: 1.5 !important;
-            margin-bottom: 12px !important;
-        }
-
-        .second-3013 .text-container .btn2 {
-            display: inline-block !important;
-            color: #a16207 !important;
-            text-decoration: none !important;
-            text-transform: uppercase !important;
-            font-size: 11px !important;
-            letter-spacing: 0.1em !important;
-            border-bottom: 1px solid #a16207 !important;
-            padding-bottom: 2px !important;
-            margin-top: 12px !important;
+        .hero-image-link:hover img {
+            filter: grayscale(0.2) contrast(1) !important;
+            opacity: 1 !important;
         }
 
         /* GOOGLE MAPS KONTEINERIS */
@@ -163,18 +130,33 @@
             border: 0 !important;
         }
 
-        /* FORMŲ KONTEINERIAI (KVADRATŲ ESTETIKA) */
-        .hero-mini-form, .form-card {
+        /* AKTYVESNĖ TRUMPOJI FORMA (CTA DIZAINAS) */
+        .hero-mini-form {
             width: 100% !important; 
-            background-color: #ffffff !important;
-            border: 1px solid #eaeaea !important; 
+            background-color: #fcfbf7 !important; /* Švelnus kreminis/šviesus tonas išskirti iš fono */
+            border: 1px solid #eadecc !important; /* Šiltesnis rėmelis */
+            border-left: 4px solid #a16207 !important; /* Aktyvus kairysis akcentas */
             padding: 32px !important;
             margin-bottom: 40px !important;
         }
 
+        .hero-mini-form h3 {
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            color: #1a1a1a !important;
+            margin: 0 0 20px 0 !important;
+            text-align: left !important;
+        }
+
+        /* FORMŲ KONTEINERIAI (ILGOJI FORMA) */
         .form-card {
+            width: 100% !important; 
             padding: 48px !important;
             background-color: #f9f9f9 !important;
+            border: 1px solid #eaeaea !important; 
+            margin-bottom: 40px !important;
         }
 
         .form-card h2 {
@@ -243,7 +225,7 @@
             border-color: #a16207 !important;
         }
 
-        /* AKCENTINIAI MYGTUKAI (#a16207) */
+        /* BAZINIS MYGTUKAS */
         .btn-primary {
             box-sizing: border-box !important;
             height: 48px !important; 
@@ -254,10 +236,7 @@
             -webkit-appearance: none !important;
             display: flex !important;
             align-items: center !important;
-            justify-content: flex-start !important;
-            background: transparent !important;
-            color: #a16207 !important;
-            border: 1px solid #a16207 !important;
+            justify-content: center !important;
             font-size: 13px !important;
             font-weight: 600 !important;
             text-transform: uppercase !important;
@@ -267,7 +246,27 @@
             transition: all 0.2s ease !important;
         }
 
-        .btn-primary:hover {
+        /* TRUMPOSIOS FORMA CTA MYGTUKAS (Pilnai užpildytas, stiprus akcentas) */
+        .hero-mini-form .btn-primary {
+            background: #a16207 !important;
+            color: #ffffff !important;
+            border: 1px solid #a16207 !important;
+        }
+
+        .hero-mini-form .btn-primary:hover {
+            background: #854d0e !important;
+            border-color: #854d0e !important;
+        }
+
+        /* ILGOSIOS FORMA MYGTUKAS (Išlaiko kontūrinį stilių) */
+        .form-card .btn-primary {
+            background: transparent !important;
+            color: #a16207 !important;
+            border: 1px solid #a16207 !important;
+            justify-content: flex-start !important;
+        }
+
+        .form-card .btn-primary:hover {
             background: #a16207 !important;
             color: #ffffff !important;
         }
@@ -375,7 +374,7 @@
             top: 16px !important;
         }
 
-        /* TRIJŲ ILIUSTRACIJŲ GALERIJŲ BAZINIS TINKLELIS (Naudojamas Variantams ir Įrangai) */
+        /* TRIJŲ ILIUSTRACIJŲ GALERIJŲ BAZINIS TINKLELIS */
         .three-column-gallery {
             display: grid !important;
             grid-template-columns: repeat(3, 1fr) !important;
@@ -415,9 +414,9 @@
             line-height: 1.4 !important;
         }
 
-        /* SOCIAL PROOF SEKCIJA */
+        /* SOCIAL PROOF SEKCIJA (VIRŠUJE) */
         .social-proof {
-            margin: 32px 0 40px 0 !important;
+            margin: 16px 0 24px 0 !important;
             font-size: 12px !important;
             color: #888888 !important;
             letter-spacing: 0.05em !important;
@@ -502,22 +501,6 @@
         }
 
         /* RESPONSIVE */
-        @media (max-width: 680px) {
-            .second-3013 {
-                flex-wrap: wrap !important;
-                margin-bottom: 24px !important;
-            }
-            .second-3013 .text-container {
-                width: calc(100% - 32px) !important;
-                position: relative !important;
-                right: auto !important;
-                top: auto !important;
-                transform: none !important;
-                margin: -30px 16px 16px 16px !important;
-                padding: 24px !important;
-            }
-        }
-
         @media (max-width: 600px) {
             .page-wrapper {
                 padding: 40px 0 !important;
@@ -529,7 +512,7 @@
                 padding: 28px 20px !important;
             }
             .hero-mini-form {
-                padding: 20px !important;
+                padding: 24px 20px !important;
             }
             .three-column-gallery {
                 grid-template-columns: 1fr !important;
@@ -537,10 +520,6 @@
             }
             .gallery-item img {
                 height: 150px !important;
-            }
-            .second-3013 .text-container p {
-                font-size: 13px !important;
-                line-height: 20px !important;
             }
         }
     </style>
@@ -554,24 +533,16 @@
             <h1>Pop-up erdvės nuoma Vilniaus senamiestyje</h1>
             <p class="lead">Ieškote jaukios, estetiškos ir gyvos vietos savo prekių ženklo pristatymui, kūrybinėms dirbtuvėms ar laikinai parduotuvei? Kviečiame įsikurti „Baltas Miškas“ butike Raugyklos g. 6!</p>
             
-            <!-- INTEGRUOTAS VIZUALUS BANERIS (second-3013) -->
-            <div class="second-3013">
-                <div class="img-container">
-                    <img alt="popup nuoma vilniuje" src="/images/Userfiles/popup_nuoma_zemelapis-2.jpg" />
-                </div>
-                <div class="text-container">
-                    <h2>Pop-up nuoma</h2>
-                    <p>Išsinuomokite Pop-up erdvę Baltas Miškas butike Vilniuje.</p>
-                    <p>The Knotty Ones, Bagota, Scale11 ir kiti jau naudojasi mūsų paslaugomis.</p>
-                    <p><a class="btn2" href="https://www.baltasmiskas.lt/pagrindinis-meniu/apie-mus/pop-up-nuoma"><strong>Daugiau</strong></a></p>
-                </div>
-            </div>
-
-            <!-- DEDIKUOTA POP-UP PAVYZDŽIŲ ERDVĖ (SOCIAL PROOF) -->
+            <!-- PERKELTAS SOCIAL PROOF SĄRAŠAS (IŠKART PO HEADLINE) -->
             <div class="social-proof">
                 <span>Prekių ženklai, kurie jau kūrė pop-up pas mus:</span>
                 <span class="social-proof-brands">The Knotty Ones, MUDVII, Doke, FG Atelier, Ducktail, Scale11, House of Intimates, Bagota, Go linen.</span>
             </div>
+
+            <!-- ŠVARI HERO ILIUSTRACIJA (BE INFORMACINIO BLOKO) -->
+            <a href="https://www.baltasmiskas.lt/pagrindinis-meniu/apie-mus/pop-up-nuoma" class="hero-image-link">
+                <img alt="popup nuoma vilniuje" src="/images/Userfiles/popup_nuoma_zemelapis-2.jpg" />
+            </a>
 
             <!-- Google Maps Embed Layer -->
             <div class="map-container">
@@ -583,8 +554,9 @@
                 </iframe>
             </div>
 
-            <!-- Quick Mini-Form -->
+            <!-- TRUMPA UŽKLAUSOS FORMA (AKTYVESNIS CTA DIZAINAS) -->
             <div class="hero-mini-form">
+                <h3>Greita laisvų datų rezervacija</h3>
                 <form action="https://tally.so/r/q4aQj5" method="POST">
                     <div class="mini-group">
                         <label for="quick-dates">Įveskite norimas pop-up nuomos datas</label>
@@ -594,7 +566,7 @@
                         <label for="quick-email">Jūsų el. paštas</label>
                         <input type="email" id="quick-email" name="email" class="form-control" placeholder="vardas@pavyzdys.lt" required>
                     </div>
-                    <button type="submit" class="btn-primary">Pateikti užklausą</button>
+                    <button type="submit" class="btn-primary">Tikrinti prieinamumą</button>
                 </form>
             </div>
 
@@ -622,10 +594,10 @@
         <!-- SECTION 2: ABOUT THE SPACE -->
         <section>
             <h2>Apie pop-up erdves</h2>
-            <p>Baltas Miškas butikas, kuriame kviečiame įkurti pop-up, yra įsikūręs strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno i išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
+            <p>Baltas Miškas butikas, kuriame kviečiame įkurti pop-up, yra įsikūręs strategiškai patogioje vietoje – pačiame Vilniaus senamiestyje, Raugyklos g. 6. Tai gyvas, mados, meno ir išskirtinio dizaino mylėtojų nuolat lankomas kvartalas, užtikrinantis natūralų tikslinės auditorijos srautą.</p>
             <p>Jauki, šviesa užpildyta butiko erdvė yra sukurta remiantis šviesia ir minimalistine estetika.</p>
 
-            <!-- SUGRĄŽINTA SKILTIS: POP-UP VARIANTAI SU TRImis ILIUSTRACIJOMIS -->
+            <!-- SKILTIS: POP-UP VARIANTAI SU TRImis ILIUSTRACIJOMIS -->
             <div style="margin-top: 40px;">
                 <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: #888888; margin-bottom: 16px;">Galimi pop-up variantai:</p>
                 <div class="three-column-gallery">
@@ -691,7 +663,7 @@
 
         <!-- SECTION 5: MARKETING & PROMOTION -->
         <section>
-            <h2>Viešinimas ir komunikacija</h2>
+            <h2>Viešinimas i komunikacija</h2>
             <p>Pasirinkus nuomos planą su viešinimo paslaugomis (550 €/mėn.), jūsų pop-up projektui suteikiame tiesioginę prieigą prie lojalios „Baltas Miškas“ auditorijos:</p>
             <ul class="original-list">
                 <li><strong>Socialiniai tinklai:</strong> Dedikuoti pristatymo įrašai ir gyvos istorijos (Stories) mūsų „Instagram“ bei „Facebook“ paskyrose, kurias seka kokybišką Lietuvos ir Baltijos šalių dizainą vertinantys žmonės.</li>
@@ -701,7 +673,7 @@
 
             <!-- LOGIŠKAI INTEGRUOTA SĖKMĖS ISTORIJOS NUORODA -->
             <p style="margin-top: 32px; font-size: 14px; color: #555555;">
-                Įkvėpimui kviečiame skaityti mūsų bendruomenės pop-up <a href="https://www.baltasmiskas.lt/pagrindinis-meniu/apie-mus/pop-up-sekmes-istorija" class="text-link">sėkmės istoriją čia</a> ir sužinoti, jak kiti prekių ženklai išnaudojo šią erdvę.
+                Įkvėpimui kviečiame skaityti mūsų bendruomenės pop-up <a href="https://www.baltasmiskas.lt/pagrindinis-meniu/apie-mus/pop-up-sekmes-istorija" class="text-link">sėkmės istoriją čia</a> ir sužinoti, kaip kiti prekių ženklai išnaudojo šią erdvę.
             </p>
         </section>
 
