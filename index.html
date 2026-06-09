@@ -627,7 +627,7 @@
 
     </div>
 
-    <script type="text/javascript">
+   <script type="text/javascript">
         const googleScriptUrl = "https://script.google.com/macros/s/AKfycby104Zqu5huYP5f58ARLzqFKyb485n3OP-ASkW6XFjJoEHxxXmlNgRr7TtDKf_kM01a/exec";
 
         document.querySelectorAll('.ajax-google-form').forEach(form => {
@@ -637,6 +637,7 @@
                 const submitBtn = form.querySelector('.btn-primary');
                 const successMsg = form.querySelector('.submit-message');
                 
+                // 1. Vizualiai pakeičiame mygtuką į siuntimo būseną
                 submitBtn.disabled = true;
                 submitBtn.innerText = "Siunčiama...";
 
@@ -653,6 +654,7 @@
                 const object = {};
                 formData.forEach((value, key) => object[key] = value);
                 
+                // 2. Kadangi naudojame no-cors, sėkmę fiksuojame iškart po fetch iškvietimo
                 fetch(googleScriptUrl, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -661,18 +663,12 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(object)
-                })
-                .then(() => {
-                    form.reset();
-                    submitBtn.style.display = 'none';
-                    successMsg.style.display = 'block';
-                })
-                .catch(error => {
-                    console.error('Klaida:', error);
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = "Pateikti užklausą";
-                    alert('Įvyko klaida siunčiant duomenis. Bandykite dar kartą.');
                 });
+
+                // 3. Paslepiame mygtuką ir parodome sėkmės pranešimą nelaukdami CORS atsakymo
+                form.reset();
+                submitBtn.style.setProperty('display', 'none', 'important');
+                successMsg.style.setProperty('display', 'block', 'important');
             });
         });
     </script>
