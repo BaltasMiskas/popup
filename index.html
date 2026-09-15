@@ -688,5 +688,19 @@
             });
         });
     </script>
+    <script type="text/javascript">
+    function sendHeight() {
+        var height = document.documentElement.scrollHeight || document.body.scrollHeight;
+        window.parent.postMessage({ iframeHeight: height }, '*');
+    }
+
+    // Siunčiame aukštį užsikrovus, pasikeitus lango dydžiui ir po dinaminio turinio krovimo
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+    
+    // Papildoma apsauga dinaminiams elementams
+    var observer = new ResizeObserver(sendHeight);
+    observer.observe(document.body);
+</script>
 </body>
 </html>
