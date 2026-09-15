@@ -688,19 +688,28 @@
             });
         });
     </script>
-    <script type="text/javascript">
+   <script type="text/javascript">
     function sendHeight() {
-        var height = document.documentElement.scrollHeight || document.body.scrollHeight;
+        // Tiksliai išmatuojame wrapper konteinerio arba viso dokumento aukštį
+        var wrapper = document.querySelector('.page-wrapper');
+        var height = wrapper ? wrapper.offsetHeight + 80 : document.body.scrollHeight;
+        
+        // Siunčiame aukštį tėviniam langui
         window.parent.postMessage({ iframeHeight: height }, '*');
     }
 
-    // Siunčiame aukštį užsikrovus, pasikeitus lango dydžiui ir po dinaminio turinio krovimo
+    // 1. Siunčiame užsikrovus puslapiui
     window.addEventListener('load', sendHeight);
     window.addEventListener('resize', sendHeight);
-    
-    // Papildoma apsauga dinaminiams elementams
-    var observer = new ResizeObserver(sendHeight);
-    observer.observe(document.body);
+
+    // 2. Papildomas patikrinimas po 500ms ir 1.5s (kai pilnai užsikrauna nuotraukos ir Google Maps)
+    setTimeout(sendHeight, 500);
+    setTimeout(sendHeight, 1500);
+
+    // 3. Jei vartotojas išskleidžia formos pranešimą
+    document.addEventListener('click', function() {
+        setTimeout(sendHeight, 200);
+    });
 </script>
 </body>
 </html>
